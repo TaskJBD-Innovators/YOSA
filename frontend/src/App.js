@@ -1,10 +1,12 @@
 
+import HomeScreen from "./HomeScreen";
+
 
 function App() {
   return (
     <div >
       <header>
-        I came, I saw and I conquered
+        <HomeScreen/>
       </header>
     </div>
   );
