@@ -1,0 +1,23 @@
+body, html {
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+
+  .HomeScreen {
+    text-align: center;
+  }
+  
+  .hero {
+    background: url('./Assets/hands.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
+  
