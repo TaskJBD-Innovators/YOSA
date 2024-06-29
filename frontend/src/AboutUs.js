@@ -6,10 +6,13 @@ import Gallery3 from './Assets/food.jpeg';
 import Gallery4 from './Assets/food.jpeg';
 import Gallery5 from './Assets/food.jpeg';
 import Gallery6 from './Assets/food.jpeg';
+import Navbar from './Navbar.js';
 
 const AboutUs = () => {
   return (
+    
     <div className="about-page">
+     
       <header className="header">
         <div className="header-text">
           <h1>About Us</h1>
@@ -17,6 +20,7 @@ const AboutUs = () => {
       </header>
 
       <main className="main-content">
+      <Navbar />
         <section className="about-section">
           <img src="https://placehold.co/400x300" alt="Group of people" className="about-image" />
           <div className="about-text">

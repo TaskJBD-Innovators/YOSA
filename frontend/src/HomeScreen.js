@@ -17,7 +17,10 @@ const HomeScreen = () => {
     <div className="HomeScreen">
       <div className="hero">
         <Navbar />
-        <img src={yosaIcon} alt="YOSA Icon" className="yosa-icon" />
+        {/* <img src={yosaIcon} alt="YOSA Icon" className="yosa-icon" /> */}
+
+        {/* I am trying to remove the yosa  */}
+        
         <div className="hero-content">
           <h1>Helping Each Other Can Make World Better</h1>
           <p>

@@ -1,5 +1,5 @@
 .navbar {
-  position: absolute; /* Position absolutely */
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -7,9 +7,19 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.5); /* Adding a semi-transparent background */
+  background: rgba(159, 136, 136, 0.5);
+  color: rgb(126, 70, 70);
+  z-index: 10;
+}
+
+.navButtons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+buttonLink{
+  text-decoration: none;
   color: white;
-  z-index: 10; /* Ensure the navbar is on top */
 }
 
 .logo {
@@ -28,9 +38,9 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: white; /* Change to white for better visibility */
+  color: white;
 }
 
 nav ul li a:hover {
-  color: #ddd; /* Slightly lighter color on hover */
+  color: #ddd;
 }
