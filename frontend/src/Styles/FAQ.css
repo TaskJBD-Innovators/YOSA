@@ -1,0 +1,274 @@
+.bg-background {
+    background-color: #f9fafb;
+  }
+  
+  .text-foreground {
+    color: #333;
+  }
+  
+  .header-image {
+    background-image: url('https://placehold.co/1920x400');
+  }
+  
+  .bg-cover {
+    background-size: cover;
+  }
+  
+  .bg-center {
+    background-position: center;
+  }
+  
+  .opacity-50 {
+    opacity: 0.5;
+  }
+  
+  .bg-black {
+    background-color: black;
+  }
+  
+  .text-white {
+    color: white;
+  }
+  
+  .text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  
+  .font-bold {
+    font-weight: 700;
+  }
+  
+  .py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  .lg\:px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  
+ 
+  .max-w-7xl {
+    max-width: 80rem;
+  }
+  
+  .mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  
+  .font-semibold {
+    font-weight: 600;
+  }
+  
+  .mb-4 {
+    margin-bottom: 1rem;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .flex-col {
+    flex-direction: column;
+  }
+  
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+  
+  .w-full {
+    width: 100%;
+  }
+  
+  .lg\:w-1\/3 {
+    width: 33.333333%;
+  }
+  
+  .mb-8 {
+    margin-bottom: 2rem;
+  }
+  
+  .lg\:mb-0 {
+    margin-bottom: 0;
+  }
+  
+  .rounded-lg {
+    border-radius: 0.5rem;
+  }
+  
+  .shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .lg\:pl-8 {
+    padding-left: 2rem;
+  }
+  
+  .text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  
+  .space-y-4 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1rem;
+  }
+  
+  .bg-card {
+    background-color: #fff;
+  }
+  
+  .p-4 {
+    padding: 1rem;
+  }
+  
+  .rounded-lg {
+    border-radius: 0.5rem;
+  }
+  
+  .shadow {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+  
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  
+  .font-medium {
+    font-weight: 500;
+  }
+  
+  .mt-2 {
+    margin-top: 0.5rem;
+  }
+  
+  .text-muted-foreground {
+    color: #6b7280;
+  }
+  
+  .bg-secondary {
+    background-color: #e5e7eb;
+  }
+  
+  .text-secondary-foreground {
+    color: #1f2937;
+  }
+  
+  .text-muted-foreground {
+    color: #6b7280;
+  }
+  
+  .grid {
+    display: grid;
+  }
+  
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+  .gap-8 {
+    gap: 2rem;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .mb-4 {
+    margin-bottom: 1rem;
+  }
+  
+  .text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  
+  .bg-card {
+    background-color: #fff;
+  }
+  
+  .py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  .lg\:px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  
+  .text-card-foreground {
+    color: #111827;
+  }
+  
+  .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0.5rem;
+  }
+  
+  .border {
+    border-width: 1px;
+  }
+  
+  .border-input {
+    border-color: #d1d5db;
+  }
+  
+  .text-primary {
+    color: #3b82f6;
+  }
+  
+  .hover\:text-primary:hover {
+    color: #2563eb;
+  }
+  
+  .bg-primary {
+    background-color: #3b82f6;
+  }
+  
+  .text-primary-foreground {
+    color: #fff;
+  }
+  
+  .hover\:bg-primary\/80:hover {
+    background-color: rgba(59, 130, 246, 0.8);
+  }
+  
+  .mt-12 {
+    margin-top: 3rem;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  

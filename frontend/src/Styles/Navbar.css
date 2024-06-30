@@ -1,0 +1,34 @@
+.navbar {
+  position: absolute; /* Position absolutely */
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(9, 9, 9);
+  z-index: 10; /* Ensure the navbar is on top */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: rgb(11, 11, 11); /* Change to white for better visibility */
+}
+
+nav ul li a:hover {
+  color: #030303; /* Slightly lighter color on hover */
+}
