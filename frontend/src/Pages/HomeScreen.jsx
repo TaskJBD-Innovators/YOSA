@@ -11,7 +11,15 @@ const HomeScreen = () => {
   return (
     <div className="HomeScreen">
       <div className="hero">
+<<<<<<< HEAD:frontend/src/Pages/HomeScreen.jsx
         <img src={yosaIcon} alt="YOSA Icon" className="yosa-icon" />
+=======
+        <Navbar />
+        {/* <img src={yosaIcon} alt="YOSA Icon" className="yosa-icon" /> */}
+
+        {/* I am trying to remove the yosa  */}
+        
+>>>>>>> 4e62f08ae859630b137eebc8fe139dc36c92a8fa:frontend/src/HomeScreen.js
         <div className="hero-content">
           <h1>Helping Each Other Can Make World Better</h1>
           <p>
