@@ -1,11 +1,13 @@
 import React from 'react';
 import '../Styles/FAQ.css';
+import Navbar from '../Components/Navbar';
+import twogirls from '../Assets/twogirls.png'
 
 const FAQ = () => {
   return (
     <div className="bg-background text-foreground">
       <header className="relative bg-cover bg-center h-64 header-image">
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+       <Navbar/>
         <div className="relative z-10 flex items-center justify-center h-full">
           <h1 className="text-4xl text-white font-bold">Frequently Asked Questions</h1>
         </div>
@@ -16,7 +18,7 @@ const FAQ = () => {
           <h2 className="text-2xl font-semibold mb-4">Have Any Questions?</h2>
           <div className="flex flex-col lg:flex-row">
             <div className="w-full lg:w-1/3 mb-8 lg:mb-0">
-              <img src="https://placehold.co/400x400" alt="Children holding a sign with 'HOPE'" className="rounded-lg shadow-lg" />
+            <img src={twogirls} alt="girls" className="girls" />
             </div>
             <div className="w-full lg:w-2/3 lg:pl-8">
               <h3 className="text-xl font-semibold mb-4">Frequently Asked Questions</h3>

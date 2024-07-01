@@ -1,19 +1,12 @@
 .navbar {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-<<<<<<< HEAD:frontend/src/Styles/Navbar.css
-  color: rgb(9, 9, 9);
   z-index: 10; /* Ensure the navbar is on top */
-=======
   padding: 20px;
-  background: rgba(159, 136, 136, 0.5);
-  color: rgb(126, 70, 70);
-  z-index: 10;
+  background-color:rgba(0, 0, 0, 0.4); 
+
 }
 
 .navButtons {
@@ -24,7 +17,6 @@
 buttonLink{
   text-decoration: none;
   color: white;
->>>>>>> 4e62f08ae859630b137eebc8fe139dc36c92a8fa:frontend/src/Navbar.css
 }
 
 .logo {
@@ -41,19 +33,18 @@ nav ul li {
   margin: 0 15px;
 }
 
-nav ul li a {
+nav ul li a { 
   text-decoration: none;
-<<<<<<< HEAD:frontend/src/Styles/Navbar.css
-  color: rgb(11, 11, 11); /* Change to white for better visibility */
+  color:white; /* Change to white for better visibility */
 }
 
 nav ul li a:hover {
-  color: #030303; /* Slightly lighter color on hover */
-=======
+  color:rgb(255, 255, 255); /* Slightly lighter color on hover */
+
   color: white;
 }
 
 nav ul li a:hover {
   color: #ddd;
->>>>>>> 4e62f08ae859630b137eebc8fe139dc36c92a8fa:frontend/src/Navbar.css
+
 }
