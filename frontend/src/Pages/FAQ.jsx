@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Styles/FAQ.css';
+import '../Styles/FAQ.module.css';
 import Navbar from '../Components/Navbar';
 import twogirls from '../Assets/twogirls.png'
 

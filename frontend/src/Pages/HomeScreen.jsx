@@ -5,7 +5,7 @@ import communityGathering from '../Assets/aboutt.jpeg';
 import donationEvent from '../Assets/about1.jpeg';
 import FunFacts from '../Components/FunFacts';
 import CauseSection from '../Components/CauseSection';
-import Navbar from '../Components/Navbar';
+import Navbar from '../Navbar';
 import imagee from '../Assets/about2.jpeg';
 
 const HomeScreen = () => {

@@ -1,86 +1,136 @@
 import React from 'react';
-import  '../Styles/Contact.css'
+import Navbar from '../Navbar.js';
+import '../Styles/tailwind.css';
+import Footer from '../Components/Footer.jsx';
 
 const ContactUs = () => {
   return (
-    <div className="bg-background text-foreground">
-      {/* Header Section */}
-      <header className="relative">
-        <img
-          src="https://placehold.co/1920x400"
-          alt="Header Image"
-          className="w-full h-64 object-cover"
+    <div className="relative">
+      <div className="heading h-64 relative">
+        <img 
+          src={require('../Assets/contactus.png')} 
+          alt="Header" 
+          className="h-64 w-full object-cover brightness-50"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <h1 className="text-4xl text-white">Contact Us</h1>
+        <h1 className="text-5xl text-center text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">Contact Us</h1>
+        <div className="absolute top-0 left-0 right-0">
+          <Navbar />
         </div>
-      </header>
+      </div>
 
-      {/* Main Content */}
-      <main className="container mx-auto p-4 md:p-8">
-        <section className="flex flex-col md:flex-row justify-between">
-          {/* Contact Form */}
-          <div className="w-full md:w-2/3 bg-card p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl mb-4">Send Me A Message</h2>
-            <form className="space-y-4">
-              <div className="flex flex-col md:flex-row md:space-x-4">
-                <input
-                  type="text"
-                  placeholder="First name"
-                  className="w-full md:w-1/2 p-2 border border-input rounded"
-                />
-                <input
-                  type="text"
-                  placeholder="Last name"
-                  className="w-full md:w-1/2 p-2 border border-input rounded"
-                />
-              </div>
-              <div className="flex flex-col md:flex-row md:space-x-4">
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  className="w-full md:w-1/2 p-2 border border-input rounded"
-                />
-                <input
-                  type="tel"
-                  placeholder="Phone"
-                  className="w-full md:w-1/2 p-2 border border-input rounded"
-                />
-              </div>
-              <textarea
-                placeholder="Type Your Message Here..."
-                className="w-full p-2 border border-input rounded h-32"
-              ></textarea>
-              <button className="bg-primary text-primary-foreground p-2 rounded hover:bg-primary/80">
-                Send Message
-              </button>
-            </form>
-          </div>
+      
 
-          {/* Address Section */}
-          <div className="w-full md:w-1/3 bg-card p-6 rounded-lg shadow-md mt-8 md:mt-0 md:ml-4">
-            <h2 className="text-2xl mb-4">Address</h2>
-            <p>
-              Queen Chimney Effluent Discharge System Lorem Ipsum, Lorem Ipsum
-              Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem
-              Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum.
-            </p>
-            <p className="mt-4">
-              <strong>Location:</strong> 457 Washington Ave Manchester, Kentucky
-              39495
-            </p>
-            <p>
-              <strong>Phone:</strong> (906) 765-4321
-            </p>
-            <p>
-              <strong>Email:</strong>{' '}
-              <a href="mailto:contact@website.com" className="text-primary">
-                contact@website.com
-              </a>
-            </p>
-          </div>
-        </section>
-      </main>
+<div className='ml-20 mr-20'>
+  <p>Get In Touch</p>
+  <h2>Send Me A Message</h2>
+
+
+  
+
+</div>
+
+<div className='flex h-full bg-red-200  mt-5 flex-col sm:flex-row md:flex-row gap-5 gap-x-10 align-center justify-center'  >
+
+  {/* form goes here */}
+  <div className= 'sm:w-2/3 h-full w-full bg-blue-300'>
+    <form action="">
+      <div name='name-section' className='flex gap-2 gap-x-10 flex-row'>
+        <div name= "first-name" className='w-1/2 flex flex-col ml-1 '>
+        <label htmlFor="first-name">First Name</label>
+        <input type="text" name="first-name" id="first-name" className=' w-full h-10' placeholder='First Name'/>
+        </div>
+
+        <div name= "first-name" className='w-1/2 flex flex-col mr-1 '>
+        <label htmlFor="first-name">Last Name</label>
+        <input type="text" name="first-name" id="first-name" className='w-full h-10' placeholder='Last Name'/>
+        </div>
+
+      </div>
+
+      <div name= 'mail-phone-section ' className='flex gap-2 gap-x-10 flex-row mt-5'>
+        <div name= 'mail-section' className='w-1/2 flex flex-col ml-1'>
+          <label htmlFor="mail">Email</label>
+          <input type="text" name="mail" id="mail" className='w-full h-10' placeholder='Email'/>
+        </div>
+
+        <div name='phone-section' className='w-1/2 flex flex-col mr-1 '>
+          <label htmlFor="phone">Phone</label>
+          <input type="number" name="phone" id="phone" className='w-full h-10' placeholder='+088'/>
+
+        </div>
+
+      
+
+
+      </div>
+
+      <div name='message-section' className='w-full flex flex-col mr-1 p-1 mt-5'>
+        <label htmlFor="message">Message</label>
+        <textarea type="text-area" name="message" id="message" className='w-full h-40 ' placeholder='Message'/>
+
+</div>
+
+      <div name='button-section' className=' p-1 mt-5'>
+     <button className='bg-slate-950 text-white h-10'>Send Message</button>   
+       </div>   
+
+    </form>
+
+ 
+
+  </div>
+
+
+  {/* contact info goes here */}
+  <div className= ' sm:w-1/3 h-full  w-full bg-green-300'>
+  <h1>Address</h1> 
+  
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, minus quas. Ad eius doloremque iure consequatur sequi, nesciunt voluptatem quae fuga hic eos voluptatibus minus harum explicabo eligendi facere enim!
+  </p>
+
+  <p>
+    <span>Location: </span>
+    4517 Washington Ave. Manchester, Kentucky 39495
+  </p>
+  <p>
+    <span>Phone: </span>
+    +88544767456
+  </p>
+  <p>
+    <span>Email: </span>
+    givelifecharity@gmail.com
+  </p>
+
+
+
+  </div>
+
+
+</div>
+
+
+<div name='sponsors-logos' className='flex flex-row justify-space-between h-200 mt-10 mb-20'>
+    <div className='w-1/4 h-200 bg-yellow-300'>
+      <img src={require('../Assets/client1.png')} alt="sponsor1" className='h-200 w-full grayscale'/>
+    </div>
+    <div className='w-1/4 h-200 bg-yellow-300'>
+    <img src={require('../Assets/client2.png')} alt="sponsor1" className='h-200 w-full grayscale'/>
+    
+    </div>
+    <div className='w-1/4 h-200 bg-yellow-300'>
+    <img src={require('../Assets/client3.png')} alt="sponsor1" className='h-200 w-full grayscale'/>
+    
+    </div>
+    <div className='w-1/4 h-200 bg-yellow-300'>
+    <img src={require('../Assets/client4.png')} alt="sponsor1" className='h-200 w-full grayscale'/>
+    
+    </div>
+
+</div>
+
+<Footer/>
+
     </div>
   );
 };

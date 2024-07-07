@@ -1,50 +1,28 @@
-.navbar {
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10; /* Ensure the navbar is on top */
-  padding: 20px;
-  background-color:rgba(0, 0, 0, 0.4); 
 
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  /* background-color: #c2c2c2; */
+   /* Adjust as needed */
+  height: 60px;
+}
+
+.logo {
+  flex: 1;
 }
 
 .navButtons {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  flex: 2;
+  
 }
 
-buttonLink{
-  text-decoration: none;
-  color: white;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-}
-
-nav ul li {
-  margin: 0 15px;
-}
-
-nav ul li a { 
-  text-decoration: none;
-  color:white; /* Change to white for better visibility */
-}
-
-nav ul li a:hover {
-  color:rgb(255, 255, 255); /* Slightly lighter color on hover */
-
-  color: white;
-}
-
-nav ul li a:hover {
-  color: #ddd;
-
+.navButton {
+  color: rgb(209, 88, 189) !important;
+  margin: 0 10px;
+  text-transform: none;
+  font-size: 100px;
 }

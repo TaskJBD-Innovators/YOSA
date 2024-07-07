@@ -126,6 +126,10 @@ body {
   .text-primary-foreground {
     color: #fff;
   }
+
+  .bg-palegreen{
+    background: #EDF7F5;
+  }
   
   .hover\:bg-primary\/80:hover {
     background-color: rgba(59, 130, 246, 0.8);

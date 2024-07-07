@@ -1,5 +1,4 @@
-import React, { useState } from 'react'; // Import useState correctly
-import './Navbar.css';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -10,6 +9,7 @@ import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
+import './Styles/Navbar.css'; // Import your CSS file
 
 const Navbar = () => {
     const isSmallScreen = useMediaQuery('(max-width:600px)');
@@ -66,16 +66,16 @@ const Navbar = () => {
                 </>
             ) : (
                 <div className='navButtons'>
-                    <Button variant='contained' size="medium" component={Link} to="/">
+                    <Button variant='text' size="large" component={Link} to="/" className="navButton">
                         Home
                     </Button>
-                    <Button size="medium" component={Link} to="/causes">
+                    <Button variant='text' size="large" component={Link} to="/causes" className="navButton">
                         Causes
                     </Button>
-                    <Button size="medium" component={Link} to="/about">
+                    <Button variant='text' size="large" component={Link} to="/about" className="navButton">
                         About
                     </Button>
-                    <Button size="medium" component={Link} to="/contact">
+                    <Button variant='text' size="large" component={Link} to="/contact" className="navButton">
                         Contact
                     </Button>
                 </div>
