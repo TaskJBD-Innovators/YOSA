@@ -7,13 +7,21 @@ import FunFacts from '../Components/FunFacts';
 import CauseSection from '../Components/CauseSection';
 import Navbar from '../Navbar';
 import imagee from '../Assets/about2.jpeg';
-import Donate from '../Components/Donate'; // Correctly import the DonationForm
+import Donate from '../Components/Donate'; 
+import Registration from '../Components/Registration';
 
 const HomeScreen = () => {
-  const [showDonationForm, setShowDonationForm] = useState(false); // State to manage form visibility
+  const [showDonationForm, setShowDonationForm] = useState(false);
+  const [showVolunteerForm, setShowVolunteerForm] = useState(false); // State to manage volunteer form visibility
 
   const handleDonateClick = () => {
     setShowDonationForm(true);
+    setShowVolunteerForm(false); // Ensure only one form is shown at a time
+  };
+
+  const handleVolunteerClick = () => {
+    setShowVolunteerForm(true);
+    setShowDonationForm(false); // Ensure only one form is shown at a time
   };
 
   return (
@@ -29,14 +37,15 @@ const HomeScreen = () => {
           </p>
           <div className="hero-buttons">
             <button onClick={handleDonateClick}>Donate Now</button>
-            <button>Know About Us</button>
+            <button onClick={handleVolunteerClick}>Volunteer With Us</button> {/* Link to VolunteerForm */}
           </div>
         </div>
       </div>
 
-      {showDonationForm ? (
-        <Donate /> // Show the DonationForm if showDonationForm is true
-      ) : (
+      {showDonationForm && <Donate />} {/* Show the DonationForm if showDonationForm is true */}
+      {showVolunteerForm && <Registration />} {/* Show the VolunteerForm if showVolunteerForm is true */}
+
+      {!showDonationForm && !showVolunteerForm && (
         <>
           <section className="about-us">
             <div className="images">
