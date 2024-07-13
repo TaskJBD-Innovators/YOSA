@@ -50,14 +50,6 @@ body, html {
   background: #333;
 }
 
-.yosa-icon {
-  position: absolute;
-  top: 10px;
-  left: 40px;
-  width: 100px;
-  height: 70px;
-}
-
 /* About Us Section */
 .about-us {
   display: flex;
@@ -138,6 +130,7 @@ body, html {
   position: relative;
   margin: 0 auto;
   display: flex;
+  margin-top: 100px;
 }
 
 .leftSection {
@@ -150,7 +143,7 @@ body, html {
 .welcomeText {
   position: absolute;
   top: 0;
-  left: 3px;
+  left: 50px;
   color: #252a34;
   font-size: 18px;
   font-family: 'Montserrat';
@@ -171,7 +164,7 @@ body, html {
 .mainHeading {
   position: absolute;
   top: 33px;
-  left: 0;
+  left: 50px;
   color: #252a34;
   font-size: 39px;
   font-family: 'Playfair Display';
@@ -184,7 +177,7 @@ body, html {
 .subText {
   position: absolute;
   top: 139px;
-  left: 0;
+  left: 50px;
   width: 467px;
   color: #444444;
   font-size: 16px;
@@ -207,7 +200,7 @@ body, html {
 .missionBackground {
   position: absolute;
   top: 0;
-  left: 1px;
+  left: 50px;
   width: 340px;
   height: 254.54px;
   background: #edf7f5;
@@ -224,7 +217,7 @@ body, html {
 .missionHeader {
   position: absolute;
   top: 0;
-  left: 17.81px;
+  left: 40.81px;
   width: 203.5px;
   height: 37.15px;
 }
@@ -232,10 +225,10 @@ body, html {
 .missionIcon {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 30px;
   width: 34.98px;
   height: 37.15px;
-  background: black;
+  
 }
 
 .missionText {
@@ -256,7 +249,7 @@ body, html {
 .missionBody {
   position: absolute;
   top: 54.4px;
-  left: 0;
+  left: 50px;
   width: 348px;
   height: 154.77px;
   color: #555555;
@@ -272,8 +265,8 @@ body, html {
 .visionBackground {
   position: absolute;
   top: 245px;
-  left: 350px;
-  width: 345px;
+  left: 400px;
+  width: 350px;
   height: 254.54px;
   background: #edf7f5;
 }
@@ -292,13 +285,13 @@ body, html {
   left: 0;
   width: 32px;
   height: 34.5px;
-  background: #22262f;
+ 
 }
 
 .visionText {
   position: absolute;
   top: 0;
-  left: 44px;
+  left: 50px;
   width: 99px;
   height: 35.78px;
   color: #22262f;
@@ -313,7 +306,7 @@ body, html {
 .donationSection {
   position: absolute;
   top: 514px;
-  left: 0;
+  left: 50px;
   width: 481px;
   height: 49px;
   justify-content: center;
@@ -366,7 +359,7 @@ body, html {
 .medicalHelpSection {
   position: absolute;
   top: 573px;
-  left: 0;
+  left: 50px;
   width: 482px;
   height: 49px;
 }
@@ -418,7 +411,7 @@ body, html {
 .visionBody {
   position: absolute;
   top: 327px;
-  left: 350px;
+  left: 400px;
   width: 348px;
   height: 175px;
   color: #555555;
@@ -436,22 +429,23 @@ body, html {
   width: 170px;
   height: 71px;
   margin-top: 48px;
+  left: 50px;
 }
 
 .imageContainer {
   position: absolute;
   top: 48px;
   left: 0;
-  width: 120px;
-  height: 150px;
+  width: 350px;
+  height: 200px;
 }
 
 .imageBackground {
   position: absolute;
   top: 0;
   left: 0;
-  width: 220px;
-  height: 250px;
+  width: 350px;
+  height: 170px;
 }
 
 .mainImage {
@@ -467,14 +461,14 @@ body, html {
   top: 0;
   left: 0;
   width: 370px;
-  height: 271px;
+  height: 171px;
 }
 
 .infoOverlay {
   position: absolute;
   top: 200px;
   left: 100px;
-  width: 220px;
+  width: 320px;
   height: 250px;
   background: rgba(251, 249, 249, 0.9);
 }
@@ -494,25 +488,80 @@ body, html {
   word-wrap: break-word;
 }
 
-.infoItem {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 207px;
-  height: 24px;
-  color: #555555;
-  font-size: 14px;
-  font-family: 'Montserrat';
-  font-weight: 400;
-  text-transform: capitalize;
-  line-height: 24px;
-  word-wrap: break-word;
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+  .hero p {
+    font-size: 14px;
+  }
+  .images {
+    flex-direction: column;
+    align-items: center;
+  }
+  .image-large, .image-small {
+    width: 80%;
+  }
+  .text-content {
+    max-width: 90%;
+    text-align: center;
+  }
+  .read-more {
+    margin: 0 auto;
+  }
 }
 
-.infoDot {
-  width: 5px;
-  height: 5px;
-  position: absolute;
-  background: #22262f;
-  border-radius: 50%;
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+  .hero p {
+    font-size: 13px;
+  }
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .leftSection, .rightSection {
+    width: 90%;
+    margin-top: 20px;
+  }
+  .imageContainer {
+    width: 80%;
+    height: auto;
+  }
+  .imageBackground, .mainImage {
+    width: 100%;
+    height: auto;
+  }
+  .infoOverlay {
+    width: 90%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 24px;
+  }
+  .hero p {
+    font-size: 12px;
+  }
+  .hero-buttons button {
+    padding: 8px 16px;
+    margin: 5px;
+  }
+  .text-content h1, .text-content h2, .text-content p {
+    text-align: center;
+  }
+  .text-content {
+    max-width: 100%;
+  }
+  .about-us {
+    flex-direction: column;
+  }
+  .image-large, .image-small {
+    width: 100%;
+  }
 }

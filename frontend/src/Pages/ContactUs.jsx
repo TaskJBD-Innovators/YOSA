@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../Navbar.js';
+import Navbar from '../Components/Navbar.jsx';
 import '../Styles/tailwind.css';
 import Footer from '../Components/Footer.jsx';
 

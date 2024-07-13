@@ -1,6 +1,7 @@
 .fun-facts-container {
   text-align: center;
   padding: 20px;
+  
 }
 
 .fun-facts-container h3 {
@@ -12,6 +13,7 @@
   font-size: 24px;
   color: #333;
   text-align: left;
+  
 }
 
 .facts {
@@ -26,7 +28,7 @@
   border-radius: 8px;
   padding: 20px;
   width: 200px;
-  height: 200px;
+  height: 250px;
   text-align: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }

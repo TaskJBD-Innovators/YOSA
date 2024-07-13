@@ -1,14 +1,16 @@
 import React, { useState } from 'react'; // Add useState import
 import '../Styles/HomeScreen.css';
-import yosaIcon from '../Assets/yosa.png';
 import communityGathering from '../Assets/aboutt.jpeg';
 import donationEvent from '../Assets/about1.jpeg';
 import FunFacts from '../Components/FunFacts';
 import CauseSection from '../Components/CauseSection';
-import Navbar from '../Navbar';
+import Navbar from '../Components/Navbar';
 import imagee from '../Assets/about2.jpeg';
 import Donate from '../Components/Donate'; 
 import Registration from '../Components/Registration';
+import { FaBullseye, FaEye } from 'react-icons/fa';
+
+
 
 const HomeScreen = () => {
   const [showDonationForm, setShowDonationForm] = useState(false);
@@ -28,7 +30,6 @@ const HomeScreen = () => {
     <div className="HomeScreen">
       <div className="hero">
         <Navbar />
-        <img src={yosaIcon} alt="YOSA Icon" className="yosa-icon" />
         <div className="hero-content">
           <h1>Helping Each Other Can Make World Better</h1>
           <p>
@@ -54,6 +55,7 @@ const HomeScreen = () => {
             </div>
             <div className="text-content">
               <h2>About Us</h2>
+              <div className="underline"></div>
               <h1>Your Support Is Really Powerful.</h1>
               <p>
                 Working Towards A World Where Young People, Irrespective Of Gender, Unlock Their Full Potential Through Youth Leadership, Mentorship, And Empowerment, Contributing To A Brighter Future For All.
@@ -76,7 +78,7 @@ const HomeScreen = () => {
                   <div className="missionBackground"></div>
                   <div className="missionContent">
                     <div className="missionHeader">
-                      <div className="missionIcon"></div>
+                    <FaBullseye className="missionIcon" />
                       <div className="missionText">Our mission</div>
                     </div>
                     <div className="missionBody">
@@ -88,7 +90,7 @@ const HomeScreen = () => {
                   <div className="visionBackground"></div>
                   <div className="visionContent">
                     <div className="visionHeader">
-                      <div className="visionIcon"></div>
+                    <FaEye className="visionIcon" />
                       <div className="visionText">Our Vision</div>
                     </div>
                     <div className="visionBody">
@@ -118,15 +120,6 @@ const HomeScreen = () => {
                 <div className="infoOverlay"></div>
                 <div className="infoText">
                   <div className="infoItem">Together, we're going to make the future</div>
-                  <div className="infoItem">children where we are able to fulfill all</div>
-                  <div className="infoItem">their requirements to keep them safe from withered world</div>
-                  <div className="infoItem">We have already stepped out and start changing the world</div>
-                  <div className="infoItem">Keeping safe them from war, inhumanity</div>
-                  <div className="infoDot"></div>
-                  <div className="infoDot"></div>
-                  <div className="infoDot"></div>
-                  <div className="infoDot"></div>
-                  <div className="infoDot"></div>
                 </div>
               </div>
             </div>
