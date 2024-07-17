@@ -7,8 +7,8 @@ import Gallery4 from '../Assets/food.jpeg';
 import Gallery5 from '../Assets/food.jpeg';
 import Gallery6 from '../Assets/food.jpeg';
 import Navbar from '../Components/Navbar';
-import Aboutus1 from '../Assets/food.jpeg';
-import Aboutus2 from '../Assets/food.jpeg';
+import Aboutus1 from '../Assets/aboutus1.png';
+import Aboutus2 from '../Assets/aboutus2.png';
 import hope from '../Assets/hope.png';
 
 
@@ -37,8 +37,9 @@ const AboutUs = () => {
       
         </div>
         <section className="mission-section">
-          <h2>Let Us Come Together To Make A Difference</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque aliquam odio et faucibus. Nulla rhoncus feugiat eros quis consectetur.</p>
+          <h2>Welcome to Charity</h2>
+          <h1>Let Us Come Together <br></br>To Make A Difference</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br></br> Nullam scelerisque aliquam odio et faucibus. Nulla rhoncus feugiat eros quis consectetur.</p>
           <div className="mission-cards">
             <div className="mission-card">
               <h3>Our Mission</h3>
@@ -59,8 +60,8 @@ const AboutUs = () => {
           <ul className="overlay-text">
             <li>Together, We're Going to Make The Future</li>
             <li>Children Where We Are Able To Fulfill All</li>
-            <li>Their Requirements To Keep Them Safe From Withered World</li>
-            <li>We Have Already Stepped Out And Start Changing The World</li>
+            <li>Their Requirements To Keep <br></br>Them Safe From Withered World</li>
+            <li>We Have Already Stepped Out And <br></br>Start Changing The World</li>
             <li>Keeping Safe Them From War, Inhumanity</li>
           </ul>
         </div>

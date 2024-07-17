@@ -2,7 +2,7 @@
 .header {
   position: relative;
   height: 50vh;
-  background: url('../Assets/aboutus.png') no-repeat center center/cover;
+  background: url('../Assets/aboutuss.png') no-repeat center center/cover;
   color: white;
 }
 
@@ -23,7 +23,7 @@
   bottom: 0;
   width: 100%;
   text-align: center;
-  background: rgba(0, 0, 0, 0.5);
+ 
 }
 
 .main-content {
@@ -45,17 +45,17 @@
 .image-large {
   width: 300px;
   height: auto;
-  border: 5px solid #fff;
+  border: 5px solid #bdebe0;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .image-small {
-  width: 230px;
+  width: 200px;
   height: auto;
   position: absolute;
   bottom: -150px;
   left:200px;
-  border: 5px solid #fff;
+  border: 5px solid #bdebe0;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -89,8 +89,27 @@
 
 .about-section, .mission-section, .donation-section, .features-section, .gallery-section {
   margin: 150px 0;
+
+}
+.mission-section h1{
+  font-size: 2em;
+  margin-bottom: 30px;
+  text-align: left;
+}
+.mission-section h2{
+  font-size: 1em;
+  color: #090909;
+  text-align: left;
+  margin-top: 5px;
 }
 
+.mission-section p{
+  font-size: 0.9em;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: #000000;
+  text-align: left;
+}
 .about-section {
   display: flex;
   flex-direction: column;
@@ -153,15 +172,16 @@
 
 .overlay {
   position: absolute;
-  top:50%;
+  top: 50%;
   transform: translateY(-50%);
   background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
   padding: 1rem;
-  border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  left: -50px;
+  left: -30px;
   height: 200px;
+  border: 7px solid #bdebe0; /* Add green border with proper syntax */
 }
+
 
 .overlay-text {
   list-style-type: disc;
@@ -181,10 +201,19 @@
 }
 
 .feature-card {
-  background: #f0f0f0;
+  background: #cef4eb;
   padding: 16px;
-  border-radius: 8px;
+  border-radius: 2px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 300px;
+  width: 300px;
+}
+.features-section h2{
+  font-size: 2em;
+  color: #090909;
+  text-align: left;
+  margin-top: 5px;
+  font-weight: 600;
 }
 
 .gallery-section {
