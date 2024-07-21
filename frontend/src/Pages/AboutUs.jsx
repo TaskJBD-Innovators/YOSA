@@ -11,14 +11,44 @@ import Aboutus1 from '../Assets/aboutus1.png';
 import Aboutus2 from '../Assets/aboutus2.png';
 import hope from '../Assets/hope.png';
 
+const features = [
+  {
+    title: 'Food & Homeless Charity',
+    description: 'Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Sed Diam Nonumy Tempor Invidunt Ut Labore Et Magna Aliquyam Erat, Sed Diam Voluptua......',
+    points: [
+      'Join Your Hand With Us For A Better Life',
+      "Let's Do The Right Thing Now",
+    ],
+    icon: 'https://placehold.co/100x100?text=🏠',
+  },
+  {
+    title: 'Make A Donation',
+    description: 'Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Sed Diam Nonumy Tempor Invidunt Ut Labore Et Magna Aliquyam Erat, Sed Diam Voluptua......',
+    points: [
+      'Join Your Hand With Us For A Better Life',
+      "Let's Do The Right Thing Now",
+      'Lorem Ipsum Dolor Sit Amet',
+    ],
+    icon: 'https://placehold.co/100x100?text=💵',
+  },
+  {
+    title: 'Non Profit NGO',
+    description: 'Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Sed Diam Nonumy Tempor Invidunt Ut Labore Et Magna Aliquyam Erat, Sed Diam Voluptua......',
+    points: [
+      'Join Your Hand With Us For A Better Life',
+      "Let's Do The Right Thing Now",
+      'Lorem Ipsum Dolor Sit Amet',
+      'Children Where We Are Able To Fulfill All',
+    ],
+    icon: 'https://placehold.co/100x100?text=🤝',
+  },
+];
 
 const AboutUs = () => {
   return (
-    
     <div className="about-page">
-     
       <header className="header">
-      <Navbar />
+        <Navbar />
         <div className="header-text">
           <h1>About Us</h1>
         </div>
@@ -34,12 +64,11 @@ const AboutUs = () => {
           <p>
             Working Towards A World Where Young People, Irrespective Of Gender, Unlock Their Full Potential Through Youth Leadership, Mentorship, And Empowerment, Contributing To A Brighter Future For All.
           </p>
-      
         </div>
         <section className="mission-section">
           <h2>Welcome to Charity</h2>
-          <h1>Let Us Come Together <br></br>To Make A Difference</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br></br> Nullam scelerisque aliquam odio et faucibus. Nulla rhoncus feugiat eros quis consectetur.</p>
+          <h1>Let Us Come Together <br />To Make A Difference</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br /> Nullam scelerisque aliquam odio et faucibus. Nulla rhoncus feugiat eros quis consectetur.</p>
           <div className="mission-cards">
             <div className="mission-card">
               <h3>Our Mission</h3>
@@ -52,36 +81,38 @@ const AboutUs = () => {
           </div>
         </section>
 
-
         <div className="about-us-section">
-      <div className="image-container">
-        <img src={hope} alt="Painted rocks with hope message" className="main-image" />
-        <div className="overlay">
-          <ul className="overlay-text">
-            <li>Together, We're Going to Make The Future</li>
-            <li>Children Where We Are Able To Fulfill All</li>
-            <li>Their Requirements To Keep <br></br>Them Safe From Withered World</li>
-            <li>We Have Already Stepped Out And <br></br>Start Changing The World</li>
-            <li>Keeping Safe Them From War, Inhumanity</li>
-          </ul>
+          <div className="image-container">
+            <img src={hope} alt="Painted rocks with hope message" className="main-image" />
+            <div className="overlay">
+              <ul className="overlay-text">
+                <li>Together, We're Going to Make The Future</li>
+                <li>Children Where We Are Able To Fulfill All</li>
+                <li>Their Requirements To Keep <br />Them Safe From Withered World</li>
+                <li>We Have Already Stepped Out And <br />Start Changing The World</li>
+                <li>Keeping Safe Them From War, Inhumanity</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+
         <section className="features-section">
           <h2>Our Features</h2>
           <div className="features-cards">
-            <div className="feature-card">
-              <h3>Feature 1</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div className="feature-card">
-              <h3>Feature 2</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div className="feature-card">
-              <h3>Feature 3</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
+            {features.map((feature, index) => (
+              <div key={index} className={`feature-card ${index === 0 ? 'feature-card-light' : 'feature-card-light'}`}>
+                <div className="icon-wrapper">
+                  <img src={feature.icon} alt={feature.title} className="icon" />
+                </div>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
+                <ul>
+                  {feature.points.map((point, idx) => (
+                    <li key={idx}>{point}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </section>
 
