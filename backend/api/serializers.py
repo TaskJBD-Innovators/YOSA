@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from api.models import Volunteer
+from api.models import *
 
 #Event Serializer
 class VolunteerSerializer(serializers.ModelSerializer):
@@ -9,5 +9,5 @@ class VolunteerSerializer(serializers.ModelSerializer):
         
 class ArticleSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Volunteer
+        model = Article
         fields = '__all__'

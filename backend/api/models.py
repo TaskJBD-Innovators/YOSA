@@ -1,5 +1,6 @@
 from django.db import models
-from django.contrib import admin
+from django.contrib import admin, messages
+from django.utils.translation import ngettext
 
 # Create your models here.
 class Volunteer(models.Model):
@@ -19,9 +20,9 @@ STATUS_CHOICES ={
     
 class Article(models.Model):
     title = models.CharField(max_length=30, null=False)
-    body = models.TextField(max_length=100, null=False)
+    body = models.TextField(null=False)
     status =models.CharField(max_length= 1, choices=STATUS_CHOICES)
-    created_at = models.DateTimeField(auto_now_add=True)  
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
@@ -35,3 +36,16 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = ["title", "status"]
     ordering = ["title"]
     actions = [make_published]
+
+    def make_published(self, request, queryset):
+        updated = queryset.update(status="p")
+        self.message_user(
+            request,
+            ngettext(
+                "%d story was successfully marked as published.",
+                "%d stories were successfully marked as published.",
+                updated,
+            )
+            % updated,
+            messages.SUCCESS,
+        )
