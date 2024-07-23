@@ -1,45 +1,64 @@
-import React, { useState } from 'react';
-import '../Styles/registration.css';
-import volunteer from '../Assets/volunteer.jpg';
+import React, { useState } from "react";
+import "../Styles/registration.css";
+import volunteer from "../Assets/volunteer.jpg";
+import { createVolunteer } from "../api/ApiService";
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    username: '',
-    email: '',
-    gender: '',
-    password: '',
-    confirmPassword: ''
+    firstName: "",
+    lastName: "",
+    username: "",
+    email: "",
+    gender: "",
   });
+
+  const [message, setMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log(formData);
+
+  const volunteerData = {
+    first_name: formData.firstName,
+    last_name: formData.lastName,
+    email_address: formData.email,
+  };
+
+  createVolunteer(volunteerData)
+    .then((response) => {
+      console.log("Volunteer created successfully:", response.data);
+      setMessage("Volunteer registered successfully");
+      //Clear the form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        gender: "",
+      });
+    })
+    .catch((error) => {
+      console.error("There was an error creating this volunteer!", error);
+      setMessage("Error registering volunteer. Please try again.");
+    });
   };
 
   return (
     <div className="registration-container">
       <div className="image-section">
-        <img
-         src={volunteer}
-          alt="Fashion Collection 2018"
-          className="image"
-        />
+        <img src={volunteer} alt="Fashion Collection 2018" className="image" />
         <p className="image-caption">#Collection 2018</p>
       </div>
       <div className="form-section">
         <h2 className="form-title">REGISTER TO VOLUNTEER WITH US</h2>
         <form onSubmit={handleSubmit} className="registration-form">
+          {message && <p className="form-message">{message}</p>}
           <div className="form-row">
             <div className="form-group">
               <label className="form-label">First Name</label>
@@ -49,6 +68,7 @@ const RegistrationForm = () => {
                 value={formData.firstName}
                 onChange={handleChange}
                 className="form-input"
+                required
               />
             </div>
             <div className="form-group">
@@ -59,20 +79,8 @@ const RegistrationForm = () => {
                 value={formData.lastName}
                 onChange={handleChange}
                 className="form-input"
+                required
               />
-            </div>
-          </div>
-          <div className="form-group">
-            <label className="form-label">Username</label>
-            <div className="form-input-wrapper">
-              <input
-                type="text"
-                name="username"
-                value={formData.username}
-                onChange={handleChange}
-                className="form-input"
-              />
-              <span className="input-icon">👤</span>
             </div>
           </div>
           <div className="form-group">
@@ -84,6 +92,7 @@ const RegistrationForm = () => {
                 value={formData.email}
                 onChange={handleChange}
                 className="form-input"
+                required
               />
               <span className="input-icon">✉️</span>
             </div>
@@ -95,6 +104,7 @@ const RegistrationForm = () => {
               value={formData.gender}
               onChange={handleChange}
               className="form-input"
+              required
             >
               <option value="">Select Gender</option>
               <option value="male">Male</option>
@@ -102,32 +112,7 @@ const RegistrationForm = () => {
               <option value="other">Other</option>
             </select>
           </div>
-          <div className="form-group">
-            <label className="form-label">Password</label>
-            <div className="form-input-wrapper">
-              <input
-                type="password"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                className="form-input"
-              />
-              <span className="input-icon">🔒</span>
-            </div>
-          </div>
-          <div className="form-group">
-            <label className="form-label">Confirm Password</label>
-            <div className="form-input-wrapper">
-              <input
-                type="password"
-                name="confirmPassword"
-                value={formData.confirmPassword}
-                onChange={handleChange}
-                className="form-input"
-              />
-              <span className="input-icon">🔒</span>
-            </div>
-          </div>
+
           <button type="submit" className="submit-button">
             Register <span className="button-icon">➡️</span>
           </button>

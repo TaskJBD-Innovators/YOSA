@@ -22,7 +22,7 @@ const ContactUs = () => {
 
 <div className='ml-20 mr-20'>
   <p>Get In Touch</p>
-  <h2>Send Me A Message</h2>
+  <h2>Send Us A Message</h2>
 
 
   
