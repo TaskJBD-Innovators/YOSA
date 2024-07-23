@@ -19,7 +19,7 @@ class ArticleViewSet(viewsets.ModelViewSet):
     serializer_class = ArticleSerializer
 
 #Contact us ViewSset    
-class ContactUsSet(viewsets.ModelViewSet):
+class ContactUsViewSet(viewsets.ModelViewSet):
     queryset = ContactUs.objects.all()
     permission_classes =[
         permissions.AllowAny
