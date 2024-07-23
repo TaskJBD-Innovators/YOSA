@@ -9,9 +9,10 @@
 }
 
 .fun-facts-container h1 {
-  font-size: 24px;
+  font-size: 30px;
   color: #333;
   text-align: left;
+  margin-bottom: 20px;
 }
 
 .facts {

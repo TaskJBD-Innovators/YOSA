@@ -63,19 +63,6 @@ const RegistrationForm = () => {
             </div>
           </div>
           <div className="form-group">
-            <label className="form-label">Username</label>
-            <div className="form-input-wrapper">
-              <input
-                type="text"
-                name="username"
-                value={formData.username}
-                onChange={handleChange}
-                className="form-input"
-              />
-              <span className="input-icon">👤</span>
-            </div>
-          </div>
-          <div className="form-group">
             <label className="form-label">Email Address</label>
             <div className="form-input-wrapper">
               <input

@@ -69,7 +69,7 @@ const causes = () => {
 
   return (
     <div className="donation-cards-section">
-      <h2 className="section-title">Latest Causes</h2>
+      <h3 className="section-title">Latest Causes</h3>
       <h1 className="section-heading">Find The Popular Cause And Donate Them</h1>
       <div className="donation-cards-grid">
         {cardsData.map((card, index) => (

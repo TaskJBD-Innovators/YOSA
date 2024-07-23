@@ -32,7 +32,7 @@ const HomeScreen = () => {
         <div className="hero-content">
           <h1>Helping Each Other Can Make World Better</h1>
           <p>
-            We Seek Out World Changers And Difference Makers Around The Globe<br />
+            We Seek Out World Changers And <br></br>Difference Makers Around The Globe<br />
             And Equip Them To Fulfill Their Unique Purpose.
           </p>
           <div className="hero-buttons">

@@ -69,9 +69,6 @@ const Navbar = () => {
                     <Button variant='text' size="large" component={Link} to="/" className="navButton">
                         Home
                     </Button>
-                    <Button variant='text' size="large" component={Link} to="/causes" className="navButton">
-                        Causes
-                    </Button>
                     <Button variant='text' size="large" component={Link} to="/about" className="navButton">
                         About
                     </Button>
