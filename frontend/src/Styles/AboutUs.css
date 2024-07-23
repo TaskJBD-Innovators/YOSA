@@ -86,35 +86,105 @@
   text-align: left;
 }
 
-.about-section, .mission-section, .donation-section, .features-section, .gallery-section {
+.about-section,.gallery-section {
   margin: 100px 0;
 }
 
-.mission-section h1 {
+.charitySection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--background);
+  overflow: hidden;
+  color: var(--foreground);
+  margin-top:100px;
+}
+
+.charityContent {
+  flex: 1 1 50%;
+  min-width: 200px;
+  text-align: left;
+  
+}
+
+.charityContent h2 {
+  color: var(--secondary);
+}
+
+.charityContent h1 {
   font-size: 2em;
-  margin-bottom: 0px;
-  text-align: left;
+  margin: 10px 0;
 }
 
-.mission-section h2 {
-  font-size: 1em;
-  color: #090909;
-  text-align: left;
-  margin-top: 5px;
+.charityContent p {
+  margin: 10px 0;
 }
 
-.mission-section p {
-  font-size: 0.9em;
-  margin-bottom: 20px;
-  line-height: 1.5;
-  color: #000000;
-  text-align: left;
+.missionVision {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
+.mission,
+.vision {
+  flex: 1 1 45%;
+  background-color: #eaf4f4;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.mission img,
+.vision img {
+  vertical-align: middle;
+  margin-right: 10px;
+  height: 35px;
+  width: 35px;
+}
+
+.progressBars {
+  margin-top: 20px;
+  
+}
+
+.progressBar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.progressBar span {
+  flex: 1;
+}
+
+.bar {
+  flex: 4;
+  background-color: #eaf4f4;
+  height: 10px;
+  margin: 0 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.fill {
+  background-color: green;
+  height: 100%;
+}
+@media (max-width: 768px) {
+  .charityContent,
+  .charityImage {
+    flex: 1 1 100%;
+    font-size: 2.5vw;
+   left: -5px;
+   
+  }
+}
 .about-section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 30px;
 }
 
 .about-image {
@@ -229,7 +299,7 @@
 
 .feature-card-light:hover {
   background-color: #1b2735;
-  color: #333;
+  color:white;
 }
 
 .icon-wrapper {
@@ -284,11 +354,12 @@
 
 @media (max-width: 1200px) {
   .main-image {
-    margin-left: 0;
+    margin-left: 50px;
+ 
   }
 
   .text-content {
-    margin-left: 0;
+
     margin-top: 30px;
     text-align: center;
 
@@ -383,7 +454,7 @@
 
   .images {
     margin-right: 0;
-    margin-bottom: 20px;
+ 
   }
 
   .text-content {
@@ -406,16 +477,19 @@
   }
 
   .main-image {
-    width: 100%;
-    margin-left: 0;
+    width: 300px;
+    margin-left: 70px;
+    height: 200px;
   }
 
   .overlay {
-    left: 0;
-    width: 100%;
+    left: -60px;
+    width: 100;
     text-align: center;
     height: auto;
+    margin-top: 2x;
     padding: 1rem 0;
+    font-size: 0.6rem;
   }
 
   .overlay-text {

@@ -10,6 +10,9 @@ import Navbar from "../Components/Navbar";
 import Aboutus1 from "../Assets/aboutus1.png";
 import Aboutus2 from "../Assets/aboutus2.png";
 import hope from "../Assets/hope.png";
+import mission from '../Assets/missionicon.png';
+import vision from '../Assets/visionicon.png';
+import Testimonial from "../Components/Testimonial";
 
 const features = [
   {
@@ -76,29 +79,45 @@ const AboutUs = () => {
             make in the lives of the poor, the abused and the helpless.{" "}
           </p>
         </div>
-        <section className="mission-section">
-          <h2>Welcome to Charity</h2>
-          <h1>
-            Let Us Come Together <br />
-            To Make A Difference
-          </h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            <br /> Nullam scelerisque aliquam odio et faucibus. Nulla rhoncus
-            feugiat eros quis consectetur.
-          </p>
-          <div className="mission-cards">
-            <div className="mission-card">
-              <h3>Our Mission</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div className="mission-card">
-              <h3>Get Involved</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
+        <div className="charitySection">
+      <div className="charityContent">
+        <h2>Welcome To Charity</h2>
+        <h1>Let Us Come Together To Make A Difference</h1>
+        <p>Towards A World Where Young People Regardless Of Gender, Unlock Their Full Potential Through Youth Leadership, Mentorship, And Empowerment, Contributing To A Brighter Future For All.</p>
+        <div className="missionVision">
+          <div className="mission">
+            <img src={mission} alt="mission" />
+            <h3>Our Mission</h3>
+            <p>
+              To Empower Young People Of All Genders Through Inclusive Leadership. 
+            </p>
           </div>
-        </section>
-
+          <div className="vision">
+            <img src={vision} alt="vision" />
+            <h3>Our Vision</h3>
+            <p>
+              Working Towards A World Where Young People, Irrespective Of Gender, Unlock Their Full Potential Through Youth Leadership, Mentorship, And Empowerment. 
+            </p>
+          </div>
+        </div>
+        <div className="progressBars">
+          <div className="progressBar">
+            <span>Donations</span>
+            <div className="bar">
+              <div className="fill" style={{ width: '75%' }}></div>
+            </div>
+            <span>75%</span>
+          </div>
+          <div className="progressBar">
+            <span>Medical Help</span>
+            <div className="bar">
+              <div className="fill" style={{ width: '90%' }}></div>
+            </div>
+            <span>90%</span>
+          </div>
+        </div>
+      </div>
+    </div>
         <div className="about-us-section">
           <div className="image-container">
             <img
@@ -164,6 +183,7 @@ const AboutUs = () => {
             <img src={Gallery6} alt="Gallery6" className="Gallery6" />
           </div>
         </section>
+   <Testimonial/>
       </main>
     </div>
   );

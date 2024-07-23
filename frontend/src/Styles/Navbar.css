@@ -19,12 +19,14 @@
 
 .logo img {
   height: 40px;
+  
 }
 
 .navButtons {
   display: flex;
   justify-content: flex-end;
   flex: 2;
+  gap: 40px;
 }
 
 .navButton {
@@ -45,5 +47,12 @@
   }
   .navButtons {
     display: none;
+    justify-content: flex-start;
+  }
+  .logo{
+    margin-right: 300px;
+    width: 55px;
+
+
   }
 }

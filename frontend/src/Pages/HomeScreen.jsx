@@ -10,7 +10,6 @@ import Registration from '../Components/Registration';
 import CharitySection from '../Components/CharitySection'; 
 import News from '../Components/News';
 
-
 const HomeScreen = () => {
   const [showDonationForm, setShowDonationForm] = useState(false);
   const [showVolunteerForm, setShowVolunteerForm] = useState(false);
@@ -25,27 +24,31 @@ const HomeScreen = () => {
     setShowDonationForm(false);
   };
 
+  const showForms = showDonationForm || showVolunteerForm;
+
   return (
     <div className="HomeScreen">
-      <div className="hero">
-        <Navbar />
-        <div className="hero-content">
-          <h1>Helping Each Other Can Make World Better</h1>
-          <p>
-            We Seek Out World Changers And <br></br>Difference Makers Around The Globe<br />
-            And Equip Them To Fulfill Their Unique Purpose.
-          </p>
-          <div className="hero-buttons">
-            <button onClick={handleDonateClick}>Donate Now</button>
-            <button onClick={handleVolunteerClick}>Volunteer With Us</button>
+      {!showForms && <Navbar />}
+      {!showForms && (
+        <div className="hero">
+          <div className="hero-content">
+            <h1>Helping Each Other Can Make World Better</h1>
+            <p>
+              We Seek Out World Changers And <br></br>Difference Makers Around The Globe<br />
+              And Equip Them To Fulfill Their Unique Purpose.
+            </p>
+            <div className="hero-buttons">
+              <button onClick={handleDonateClick}>Donate Now</button>
+              <button onClick={handleVolunteerClick}>Volunteer With Us</button>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {showDonationForm && <Donate />}
       {showVolunteerForm && <Registration />}
 
-      {!showDonationForm && !showVolunteerForm && (
+      {!showForms && (
         <>
           <div className="support-section">
             <div className="images">
@@ -74,7 +77,7 @@ const HomeScreen = () => {
           <CharitySection /> {/* Add the CharitySection component here */}
           <FunFacts />
           <CauseSection />
-          <News/>
+          <News />
         </>
       )}
     </div>
