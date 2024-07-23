@@ -20,29 +20,29 @@ const ContactUs = () => {
 
       
 
-<div className='ml-20 mr-20'>
-  <p>Get In Touch</p>
-  <h2>Send Me A Message</h2>
+<div className='p-2 md:mx-12'>
+  <p className='font-bold'>Get In Touch</p>
+  <h2 className='text-3xl font-bold'>Send Me A Message</h2>
 
 
   
 
 </div>
 
-<div className='flex h-full bg-red-200  mt-5 flex-col sm:flex-row md:flex-row gap-5 gap-x-10 align-center justify-center'  >
+<div className='flex h-full mt-5 flex-col sm:flex-row md:flex-row gap-5 gap-x-10 align-center justify-center mx-2 md:mx-12'  >
 
   {/* form goes here */}
-  <div className= 'sm:w-2/3 h-full w-full bg-blue-300'>
+  <div className= 'sm:w-2/3 h-full w-full '>
     <form action="">
       <div name='name-section' className='flex gap-2 gap-x-10 flex-row'>
         <div name= "first-name" className='w-1/2 flex flex-col ml-1 '>
         <label htmlFor="first-name">First Name</label>
-        <input type="text" name="first-name" id="first-name" className=' w-full h-10' placeholder='First Name'/>
+        <input type="text" name="first-name" id="first-name" className=' w-full h-10 p-2 bg-green-50' placeholder='First Name'/>
         </div>
 
         <div name= "first-name" className='w-1/2 flex flex-col mr-1 '>
         <label htmlFor="first-name">Last Name</label>
-        <input type="text" name="first-name" id="first-name" className='w-full h-10' placeholder='Last Name'/>
+        <input type="text" name="first-name" id="first-name" className='w-full h-10 p-2 bg-green-50' placeholder='Last Name'/>
         </div>
 
       </div>
@@ -50,12 +50,12 @@ const ContactUs = () => {
       <div name= 'mail-phone-section ' className='flex gap-2 gap-x-10 flex-row mt-5'>
         <div name= 'mail-section' className='w-1/2 flex flex-col ml-1'>
           <label htmlFor="mail">Email</label>
-          <input type="text" name="mail" id="mail" className='w-full h-10' placeholder='Email'/>
+          <input type="text" name="mail" id="mail" className='w-full h-10 placeholder:p-2 bg-green-50' placeholder='Email'/>
         </div>
 
         <div name='phone-section' className='w-1/2 flex flex-col mr-1 '>
           <label htmlFor="phone">Phone</label>
-          <input type="number" name="phone" id="phone" className='w-full h-10' placeholder='+088'/>
+          <input type="text" name="phone" id="phone" className='w-full h-10 placeholder:p-2 bg-green-50' placeholder='+088'/>
 
         </div>
 
@@ -66,12 +66,12 @@ const ContactUs = () => {
 
       <div name='message-section' className='w-full flex flex-col mr-1 p-1 mt-5'>
         <label htmlFor="message">Message</label>
-        <textarea type="text-area" name="message" id="message" className='w-full h-40 ' placeholder='Message'/>
+        <textarea type="text-area" name="message" id="message" className='w-full h-40 bg-green-50 p-2' placeholder='Message'/>
 
 </div>
 
       <div name='button-section' className=' p-1 mt-5'>
-     <button className='bg-slate-950 text-white h-10'>Send Message</button>   
+     <button className='bg-slate-950 text-white p-2 h-10'>Send Message</button>   
        </div>   
 
     </form>
@@ -82,23 +82,23 @@ const ContactUs = () => {
 
 
   {/* contact info goes here */}
-  <div className= ' sm:w-1/3 h-full  w-full bg-green-300'>
-  <h1>Address</h1> 
+  <div className= ' sm:w-1/3 h-full  w-full bg-green-50 p-2'>
+  <h1 className='text-3xl font-bold mt-4 '>Address</h1> 
   
-  <p>
+  <p className='my-4' >
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, minus quas. Ad eius doloremque iure consequatur sequi, nesciunt voluptatem quae fuga hic eos voluptatibus minus harum explicabo eligendi facere enim!
   </p>
 
   <p>
-    <span>Location: </span>
+    <span className='font-bold'>Location: </span>
     4517 Washington Ave. Manchester, Kentucky 39495
   </p>
   <p>
-    <span>Phone: </span>
+    <span className='font-bold'>Phone: </span>
     +88544767456
   </p>
   <p>
-    <span>Email: </span>
+    <span className='font-bold '>Email: </span>
     givelifecharity@gmail.com
   </p>
 
@@ -110,19 +110,19 @@ const ContactUs = () => {
 </div>
 
 
-<div name='sponsors-logos' className='flex flex-row justify-space-between h-200 mt-10 mb-20'>
-    <div className='w-1/4 h-200 bg-yellow-300'>
+<div name='sponsors-logos' className='flex flex-row justify-space-between h-200 mt-10 mb-20 md:mx-12'>
+    <div className='w-1/4 h-200'>
       <img src={require('../Assets/client1.png')} alt="sponsor1" className='h-200 w-full grayscale'/>
     </div>
-    <div className='w-1/4 h-200 bg-yellow-300'>
+    <div className='w-1/4 h-200'>
     <img src={require('../Assets/client2.png')} alt="sponsor1" className='h-200 w-full grayscale'/>
     
     </div>
-    <div className='w-1/4 h-200 bg-yellow-300'>
+    <div className='w-1/4 h-200'>
     <img src={require('../Assets/client3.png')} alt="sponsor1" className='h-200 w-full grayscale'/>
     
     </div>
-    <div className='w-1/4 h-200 bg-yellow-300'>
+    <div className='w-1/4 h-200 '>
     <img src={require('../Assets/client4.png')} alt="sponsor1" className='h-200 w-full grayscale'/>
     
     </div>
