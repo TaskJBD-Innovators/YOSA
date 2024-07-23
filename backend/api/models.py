@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib import admin, messages
 from django.utils.translation import ngettext
+from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
 class Volunteer(models.Model):
@@ -11,6 +12,18 @@ class Volunteer(models.Model):
 
     def __str__(self):
         return self.email_address
+
+
+class ContactUs(models.Model):
+    first_name = models.CharField(max_length=30, null=False)
+    last_name = models.CharField(max_length=30, null=True)
+    email = models.EmailField(max_length=200, null=False)
+    phone_number = PhoneNumberField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.first_name
+
 
 STATUS_CHOICES ={
     "d": "Draft",
