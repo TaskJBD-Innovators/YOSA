@@ -23,7 +23,7 @@ const features = [
       "Join Your Hand With Us For A Better Life",
       "Let's Do The Right Thing Now",
     ],
-    icon: "https://placehold.co/100x100?text=🏠",
+    icon: require('../Assets/houseicon.png'),
   },
   {
     title: "Make A Donation",
@@ -34,7 +34,7 @@ const features = [
       "Let's Do The Right Thing Now",
       "Lorem Ipsum Dolor Sit Amet",
     ],
-    icon: "https://placehold.co/100x100?text=💵",
+    icon: require('../Assets/dolldo.png'),
   },
   {
     title: "Non Profit NGO",
@@ -46,7 +46,7 @@ const features = [
       "Lorem Ipsum Dolor Sit Amet",
       "Children Where We Are Able To Fulfill All",
     ],
-    icon: "https://placehold.co/100x100?text=🤝",
+    icon: require('../Assets/shakeicon.png'),
   },
 ];
 
