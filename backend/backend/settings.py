@@ -42,7 +42,12 @@ INSTALLED_APPS = [
     'rest_framework',
 #    'frontend.apps.FrontendConfig',
     'corsheaders',
+    'paystack',
 ]
+
+##paystack integration
+PAYSTACK_PUBLIC_KEY = 'pk_test_fef259dc53273c2348a226b62931b00eb6f4cb7c'
+PAYSTACK_SECRET_KEY = 'sk_test_ffac88be443941ce0f0350c7e6ee8e040c7fcc53'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

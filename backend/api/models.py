@@ -11,6 +11,12 @@ class Volunteer(models.Model):
 
     def __str__(self):
         return self.email_address
+    
+    
+class Donation(models.Model):
+    first_name = models.CharField(max_length=30, null=False)
+    last_name = models.CharField(max_length=30, null=False)
+    email_address = models.EmailField(max_length=30, null=False)
 
 STATUS_CHOICES ={
     "d": "Draft",
