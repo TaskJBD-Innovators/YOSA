@@ -21,7 +21,7 @@ body, html {
 }
 
 .hero-content {
-  max-width: 800px;
+  max-width: 70%;
   background: rgba(0, 0, 0, 0.4);
   padding: 20px;
   border-radius: 10px;
@@ -29,12 +29,12 @@ body, html {
 }
 
 .hero h1 {
-  font-size: 48px;
+  font-size: 3vw;
 }
 
 .hero p {
-  margin: 50px 0;
-  font-size: 15px;
+  margin: 20px 0;
+  font-size: 2vw;
 }
 
 .hero-buttons button {
@@ -50,469 +50,262 @@ body, html {
   background: #333;
 }
 
-.yosa-icon {
-  position: absolute;
-  top: 10px;
-  left: 40px;
-  width: 100px;
-  height: 70px;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-content {
+    margin: 50px 0;
+  }
+
+  .hero h1 {
+    font-size: 6vw;
+  }
+
+  .hero p {
+    font-size: vw;
+  }
+
+  .hero-buttons button {
+    padding: 8px 16px;
+  }
 }
 
-/* About Us Section */
 .about-us {
+  padding: 20px;
+}
+.content{
+  text-align: left;
+}
+
+.images {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 50px;
+}
+
+.image-large, .image-small {
+  width: 80%;
+  max-width: 500px;
+  margin: 10px 0;
+}
+
+@media (min-width: 768px) {
+  .images {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .image-large, .image-small {
+    width: 45%;
+  }
+}
+
+
+/* SupportSection.css */
+
+.support-section {
+  display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
 }
 
 .images {
   position: relative;
-  margin-right: 20px;
+  flex-basis: 45%;
+  margin-bottom: 20px;
 }
 
-.image-large {
-  width: 300px;
+.image {
+  border: 6px solid #e0f7fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
   height: auto;
-  border: 5px solid #fff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.image-small {
-  width: 200px;
-  height: auto;
+.image1 {
+  max-width: 80%;
+}
+
+.image2 {
+  max-width: 60%;
   position: absolute;
-  bottom: -50px;
-  left: 50px;
-  border: 5px solid #fff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  top: 60%;
+  left: 50%;
+  border: 6px solid #e0f7fa;
 }
 
-.text-content {
-  max-width: 400px;
-  box-sizing: border-box;
+.content {
+  flex-basis: 45%;
+  max-width: 500px;
 }
 
-.text-content h2 {
-  font-size: 1em;
-  color: #090909;
-  text-align: left;
+.content h2 {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.content h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: #666;
   margin-top: 5px;
 }
 
-.text-content h1 {
+.content h1 {
   font-size: 2em;
+  color: #333;
   margin-bottom: 20px;
-  text-align: left;
 }
 
-.text-content p {
-  font-size: 0.9em;
-  margin-bottom: 20px;
+.content p {
+  font-size: 1em;
+  color: #666;
   line-height: 1.5;
-  color: #333;
-  text-align: left;
+  margin-bottom: 20px;
 }
 
 .read-more {
   background-color: #333;
   color: #fff;
-  border: none;
   padding: 10px 20px;
-  font-size: 0.9em;
+  border: none;
   cursor: pointer;
-  margin-left: 0; /* Adjusted for better alignment */
+  font-size: 1em;
 }
 
 .read-more:hover {
   background-color: #555;
 }
-.container {
-  width: 100%;
-  max-width: 100%;
-  height: 671px;
-  position: relative;
-  margin: 0 auto;
+
+@media (max-width: 768px) {
+  .support-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .images, .content {
+    flex-basis: 100%;
+    right: 20px;
+  }
+
+  .image2 {
+    position: relative;
+    max-width: 50%;
+    top:-70px;
+    left: 100px;
+    margin: 0 auto;
+  }
+}
+
+.charity-section {
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
-.leftSection {
-  width: 711px;
-  height: 622px;
-  margin-top: 49px;
+.charity-content {
+  flex: 1 1 50%;
+  min-width: 300px;
+}
+
+.charity-content h2 {
+  color: var(--secondary);
+}
+
+.charity-content h1 {
+  font-size: 2em;
+  margin: 10px 0;
+}
+
+.charity-content p {
+  margin: 10px 0;
+}
+
+.mission-vision {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.mission, .vision {
+  flex: 1 1 45%;
+  background-color: var(--card);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.mission img, .vision img {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.progress-bars {
+  margin-top: 20px;
+}
+
+.progress-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.progress-bar span {
+  flex: 1;
+}
+
+.bar {
+  flex: 4;
+  background-color: var(--muted);
+  height: 10px;
+  margin: 0 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.fill {
+  background-color: var(--primary);
+  height: 100%;
+}
+
+.charity-image {
+  flex: 1 1 45%;
+  min-width: 300px;
   position: relative;
 }
 
-.welcomeText {
-  position: absolute;
-  top: 0;
-  left: 3px;
-  color: #252a34;
-  font-size: 18px;
-  font-family: 'Montserrat';
-  font-weight: 600;
-  text-transform: capitalize;
-  line-height: 28px;
-  word-wrap: break-word;
+.charity-image img {
+  width: 100%;
+  border-radius: 10px;
 }
 
-.underline {
+.image-caption {
   position: absolute;
-  top: 17px;
-  left: 200px;
-  width: 60px;
-  border: 1px rgba(0, 0, 0, 0.25) solid;
+  bottom: 10px;
+  left: 10px;
+  background-color: var(--card);
+  padding: 10px;
+  border-radius: 10px;
 }
 
-.mainHeading {
-  position: absolute;
-  top: 33px;
-  left: 0;
-  color: #252a34;
-  font-size: 39px;
-  font-family: 'Playfair Display';
-  font-weight: 700;
-  text-transform: capitalize;
-  line-height: 50px;
-  word-wrap: break-word;
+.image-caption ul {
+  list-style-type: disc;
+  padding-left: 20px;
 }
 
-.subText {
-  position: absolute;
-  top: 139px;
-  left: 0;
-  width: 467px;
-  color: #444444;
-  font-size: 16px;
-  font-family: 'Montserrat';
-  font-weight: 400;
-  text-transform: capitalize;
-  line-height: 26px;
-  word-wrap: break-word;
-  text-align: left;
+.image-caption li {
+  margin-bottom: 5px;
 }
 
-.missionSection {
-  position: absolute;
-  top: 247px;
-  left: 4px;
-  width: 340px;
-  height: 330px;
-}
-
-.missionBackground {
-  position: absolute;
-  top: 0;
-  left: 1px;
-  width: 340px;
-  height: 254.54px;
-  background: #edf7f5;
-}
-
-.missionContent {
-  position: absolute;
-  top: 20.83px;
-  left: 0;
-  width: 348px;
-  height: 309.17px;
-}
-
-.missionHeader {
-  position: absolute;
-  top: 0;
-  left: 17.81px;
-  width: 203.5px;
-  height: 37.15px;
-}
-
-.missionIcon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 34.98px;
-  height: 37.15px;
-  background: black;
-}
-
-.missionText {
-  position: absolute;
-  top: 0;
-  left: 51.42px;
-  width: 152.08px;
-  height: 37.15px;
-  color: black;
-  font-size: 20px;
-  font-family: 'Nunito';
-  font-weight: 700;
-  text-transform: capitalize;
-  line-height: 28px;
-  word-wrap: break-word;
-}
-
-.missionBody {
-  position: absolute;
-  top: 54.4px;
-  left: 0;
-  width: 348px;
-  height: 154.77px;
-  color: #555555;
-  font-size: 14px;
-  font-family: 'Montserrat';
-  font-weight: 400;
-  text-transform: capitalize;
-  line-height: 24px;
-  word-wrap: break-word;
-  text-align: left;
-}
-
-.visionBackground {
-  position: absolute;
-  top: 245px;
-  left: 350px;
-  width: 345px;
-  height: 254.54px;
-  background: #edf7f5;
-}
-
-.visionHeader {
-  position: absolute;
-  top: 271px;
-  left: 494px;
-  width: 143px;
-  height: 35.78px;
-}
-
-.visionIcon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 32px;
-  height: 34.5px;
-  background: #22262f;
-}
-
-.visionText {
-  position: absolute;
-  top: 0;
-  left: 44px;
-  width: 99px;
-  height: 35.78px;
-  color: #22262f;
-  font-size: 20px;
-  font-family: 'Nunito';
-  font-weight: 700;
-  text-transform: capitalize;
-  line-height: 28px;
-  word-wrap: break-word;
-}
-
-.donationSection {
-  position: absolute;
-  top: 514px;
-  left: 0;
-  width: 481px;
-  height: 49px;
-  justify-content: center;
-}
-
-.donationHeader {
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #252a34;
-  font-size: 20px;
-  font-family: 'Montserrat';
-  font-weight: 600;
-  text-transform: capitalize;
-  line-height: 28px;
-  word-wrap: break-word;
-}
-
-.donationBackground {
-  position: absolute;
-  top: 36px;
-  left: 0;
-  width: 481px;
-  height: 13px;
-  background: #c7e7df;
-}
-
-.donationProgress {
-  position: absolute;
-  top: 36px;
-  left: 0;
-  width: 403px;
-  height: 13px;
-  background: rgba(25, 48, 16, 0.9);
-}
-
-.donationPercentage {
-  position: absolute;
-  top: 2px;
-  left: 446px;
-  color: #252a34;
-  font-size: 16px;
-  font-family: 'Montserrat';
-  font-weight: 700;
-  text-transform: capitalize;
-  line-height: 24px;
-  word-wrap: break-word;
-}
-
-.medicalHelpSection {
-  position: absolute;
-  top: 573px;
-  left: 0;
-  width: 482px;
-  height: 49px;
-}
-
-.medicalHelpHeader {
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #252a34;
-  font-size: 20px;
-  font-family: 'Montserrat';
-  font-weight: 600;
-  text-transform: capitalize;
-  line-height: 28px;
-  word-wrap: break-word;
-}
-
-.medicalHelpBackground {
-  position: absolute;
-  top: 36px;
-  left: 0;
-  width: 481px;
-  height: 13px;
-  background: #c7e7df;
-}
-
-.medicalHelpProgress {
-  position: absolute;
-  top: 36px;
-  left: 0;
-  width: 430px;
-  height: 13px;
-  background: rgba(25, 48, 16, 0.9);
-}
-
-.medicalHelpPercentage {
-  position: absolute;
-  top: 2px;
-  left: 445px;
-  color: #252a34;
-  font-size: 16px;
-  font-family: 'Montserrat';
-  font-weight: 700;
-  text-transform: capitalize;
-  line-height: 24px;
-  word-wrap: break-word;
-}
-
-.visionBody {
-  position: absolute;
-  top: 327px;
-  left: 350px;
-  width: 348px;
-  height: 175px;
-  color: #555555;
-  font-size: 14px;
-  font-family: 'Montserrat';
-  font-weight: 400;
-  text-transform: capitalize;
-  line-height: 24px;
-  word-wrap: break-word;
-  text-align: left;
-}
-
-.rightSection {
-  position: relative;
-  width: 170px;
-  height: 71px;
-  margin-top: 48px;
-}
-
-.imageContainer {
-  position: absolute;
-  top: 48px;
-  left: 0;
-  width: 120px;
-  height: 150px;
-}
-
-.imageBackground {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 220px;
-  height: 250px;
-}
-
-.mainImage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 220px;
-  height: 250px;
-}
-
-.infoBackground {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 370px;
-  height: 271px;
-}
-
-.infoOverlay {
-  position: absolute;
-  top: 200px;
-  left: 100px;
-  width: 220px;
-  height: 250px;
-  background: rgba(251, 249, 249, 0.9);
-}
-
-.infoText {
-  position: absolute;
-  top: 235px;
-  left: 26px;
-  width: 409px;
-  height: 184px;
-  color: #555555;
-  font-size: 14px;
-  font-family: 'Montserrat';
-  font-weight: 400;
-  text-transform: capitalize;
-  line-height: 24px;
-  word-wrap: break-word;
-}
-
-.infoItem {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 207px;
-  height: 24px;
-  color: #555555;
-  font-size: 14px;
-  font-family: 'Montserrat';
-  font-weight: 400;
-  text-transform: capitalize;
-  line-height: 24px;
-  word-wrap: break-word;
-}
-
-.infoDot {
-  width: 5px;
-  height: 5px;
-  position: absolute;
-  background: #22262f;
-  border-radius: 50%;
+@media (max-width: 768px) {
+  .charity-content, .charity-image {
+    flex: 1 1 100%;
+  }
 }

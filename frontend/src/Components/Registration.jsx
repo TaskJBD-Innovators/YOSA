@@ -63,19 +63,6 @@ const RegistrationForm = () => {
             </div>
           </div>
           <div className="form-group">
-            <label className="form-label">Username</label>
-            <div className="form-input-wrapper">
-              <input
-                type="text"
-                name="username"
-                value={formData.username}
-                onChange={handleChange}
-                className="form-input"
-              />
-              <span className="input-icon">👤</span>
-            </div>
-          </div>
-          <div className="form-group">
             <label className="form-label">Email Address</label>
             <div className="form-input-wrapper">
               <input
@@ -101,32 +88,6 @@ const RegistrationForm = () => {
               <option value="female">Female</option>
               <option value="other">Other</option>
             </select>
-          </div>
-          <div className="form-group">
-            <label className="form-label">Password</label>
-            <div className="form-input-wrapper">
-              <input
-                type="password"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                className="form-input"
-              />
-              <span className="input-icon">🔒</span>
-            </div>
-          </div>
-          <div className="form-group">
-            <label className="form-label">Confirm Password</label>
-            <div className="form-input-wrapper">
-              <input
-                type="password"
-                name="confirmPassword"
-                value={formData.confirmPassword}
-                onChange={handleChange}
-                className="form-input"
-              />
-              <span className="input-icon">🔒</span>
-            </div>
           </div>
           <button type="submit" className="submit-button">
             Register <span className="button-icon">➡️</span>
