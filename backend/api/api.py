@@ -10,9 +10,18 @@ class VolunteerViewSet(viewsets.ModelViewSet):
     ]
     serializer_class = VolunteerSerializer
     
+#Article Viewset    
 class ArticleViewSet(viewsets.ModelViewSet):
     queryset = Article.objects.all()
     permission_classes =[
         permissions.AllowAny
     ]
     serializer_class = ArticleSerializer
+    
+#Contact Us Viewset    
+class ContactUsViewSet(viewsets.ModelViewSet):
+    queryset = ContactUs.objects.all()
+    permission_classes =[
+        permissions.AllowAny
+    ]
+    serializer_class = ContactUsSerializer

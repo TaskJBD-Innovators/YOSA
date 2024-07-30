@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
 #    'frontend.apps.FrontendConfig',
     'corsheaders',
-    'paystack',
+    'phonenumber_field',
+    
 ]
 
 ##paystack integration
@@ -141,3 +142,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+PHONENUMBER_DEFAULT_REGION = 'GH' # Your Prefered Country
+PHONENUMBER_DEFAULT_FORMAT = 'IN'
