@@ -42,7 +42,13 @@ INSTALLED_APPS = [
     'rest_framework',
 #    'frontend.apps.FrontendConfig',
     'corsheaders',
+    'phonenumber_field',
+    
 ]
+
+##paystack integration
+PAYSTACK_PUBLIC_KEY = 'pk_test_fef259dc53273c2348a226b62931b00eb6f4cb7c'
+PAYSTACK_SECRET_KEY = 'sk_test_ffac88be443941ce0f0350c7e6ee8e040c7fcc53'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -136,3 +142,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+PHONENUMBER_DEFAULT_REGION = 'GH' # Your Prefered Country
+PHONENUMBER_DEFAULT_FORMAT = 'IN'

@@ -5,5 +5,7 @@ from .api import *
 router = routers.DefaultRouter()
 router.register('api/volunteers',VolunteerViewSet, 'Volunteer')
 router.register('api/articles',ArticleViewSet, 'Article')
+router.register('api/contactus',ContactUsViewSet, 'ContactUs')
+
 
 urlpatterns = router.urls 
