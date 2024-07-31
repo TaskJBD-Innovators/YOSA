@@ -1,9 +1,18 @@
-from rest_framework import routers
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import (
+    UserViewSet, EventViewSet, VolunteerOpportunityViewSet,
+    DonationViewSet, ProgramViewSet, ApplicationViewSet
+)
 
-from .api import *
+router = DefaultRouter()
+router.register(r'users', UserViewSet)
+router.register(r'events', EventViewSet)
+router.register(r'volunteer-opportunities', VolunteerOpportunityViewSet)
+router.register(r'donations', DonationViewSet)
+router.register(r'programs', ProgramViewSet)
+router.register(r'applications', ApplicationViewSet)
 
-router = routers.DefaultRouter()
-router.register('api/volunteers',VolunteerViewSet, 'Volunteer')
-router.register('api/articles',ArticleViewSet, 'Article')
-
-urlpatterns = router.urls 
+urlpatterns = [
+    path('', include(router.urls)),
+]
