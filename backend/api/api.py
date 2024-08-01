@@ -9,19 +9,20 @@ class VolunteerViewSet(viewsets.ModelViewSet):
         permissions.AllowAny
     ]
     serializer_class = VolunteerSerializer
-
-#Article ViewSset    
+    
+#Article Viewset    
 class ArticleViewSet(viewsets.ModelViewSet):
     queryset = Article.objects.all()
     permission_classes =[
         permissions.AllowAny
     ]
     serializer_class = ArticleSerializer
-
-#Contact us ViewSset    
+    
+#Contact Us Viewset    
 class ContactUsViewSet(viewsets.ModelViewSet):
     queryset = ContactUs.objects.all()
     permission_classes =[
         permissions.AllowAny
     ]
     serializer_class = ContactUsSerializer
+    serializer_class = ArticleSerializer

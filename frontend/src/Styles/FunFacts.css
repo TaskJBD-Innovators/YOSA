@@ -9,9 +9,10 @@
 }
 
 .fun-facts-container h1 {
-  font-size: 24px;
+  font-size: 30px;
   color: #333;
   text-align: left;
+  margin-bottom: 20px;
 }
 
 .facts {
@@ -26,7 +27,7 @@
   border-radius: 8px;
   padding: 20px;
   width: 200px;
-  height: 200px;
+  height: 250px;
   text-align: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -46,4 +47,57 @@
 .fact-label {
   font-size: 14px;
   color: black;
+}
+
+@media (max-width: 768px) {
+  .facts {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fact {
+    width: 80%;
+    height: auto;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .fact-icon {
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
+
+  .fact-number {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .fact-label {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fun-facts-container h1 {
+    font-size: 20px;
+  }
+
+  .fact {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .fact-icon {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+
+  .fact-number {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .fact-label {
+    font-size: 10px;
+  }
 }
