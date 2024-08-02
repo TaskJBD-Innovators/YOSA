@@ -2,7 +2,7 @@ from api.models import *
 from rest_framework import viewsets, permissions
 from .serializers import *
 
-#Event Viewset
+#Volunteer Viewset
 class VolunteerViewSet(viewsets.ModelViewSet):
     queryset = Volunteer.objects.all()
     permission_classes =[
@@ -25,3 +25,4 @@ class ContactUsViewSet(viewsets.ModelViewSet):
         permissions.AllowAny
     ]
     serializer_class = ContactUsSerializer
+    serializer_class = ArticleSerializer

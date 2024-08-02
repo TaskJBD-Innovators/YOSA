@@ -7,7 +7,7 @@ import CauseSection from '../Components/CauseSection';
 import Navbar from '../Components/Navbar';
 import Donate from '../Components/Donate';
 import Registration from '../Components/Registration';
-import CharitySection from '../Components/CharitySection'; 
+import CharitySection from '../Components/CharitySection';
 import News from '../Components/News';
 
 const HomeScreen = () => {
@@ -34,7 +34,7 @@ const HomeScreen = () => {
           <div className="hero-content">
             <h1>Helping Each Other Can Make World Better</h1>
             <p>
-              We Seek Out World Changers And <br></br>Difference Makers Around The Globe<br />
+              We Seek Out World Changers And <br />Difference Makers Around The Globe<br />
               And Equip Them To Fulfill Their Unique Purpose.
             </p>
             <div className="hero-buttons">
@@ -74,7 +74,7 @@ const HomeScreen = () => {
               <button className="read-more">Read More</button>
             </div>
           </div>
-          <CharitySection /> {/* Add the CharitySection component here */}
+          <CharitySection />
           <FunFacts />
           <CauseSection />
           <News />
