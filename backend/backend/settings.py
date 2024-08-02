@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,9 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api.apps.ApiConfig',
     'rest_framework',
-#    'frontend.apps.FrontendConfig',
+
     'corsheaders',
     'phonenumber_field',
+    'paystack',
     
 ]
 
@@ -144,4 +146,19 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 PHONENUMBER_DEFAULT_REGION = 'GH' # Your Prefered Country
-PHONENUMBER_DEFAULT_FORMAT = 'IN'
+
+
+##env file
+path_to_env_file = '../backend/env'
+load_dotenv(path_to_env_file) 
+
+GMAIL_EMAIL = os.getenv('GMAIL_USER_EMAIL')
+GMAIL_PASSWORD = os.getenv('GMAIL_USER_PASSWORD')
+
+# EMAIL CONFIGURATION (for contact form)
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = GMAIL_EMAIL
+EMAIL_HOST_PASSWORD = GMAIL_PASSWORD
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
