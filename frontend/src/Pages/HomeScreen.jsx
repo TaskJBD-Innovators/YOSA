@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import '../Styles/HomeScreen.css';
 import communityGathering from '../Assets/aboutt.jpeg';
 import donationEvent from '../Assets/about1.jpeg';
@@ -10,13 +9,10 @@ import Donate from '../Components/Donate';
 import Registration from '../Components/Registration';
 import CharitySection from '../Components/CharitySection';
 import News from '../Components/News';
-import { PaystackButton } from 'react-paystack';
 
 const HomeScreen = () => {
   const [showDonationForm, setShowDonationForm] = useState(false);
   const [showVolunteerForm, setShowVolunteerForm] = useState(false);
-  const [donationData, setDonationData] = useState({ email: '', name: '', amount: 0 });
-  const [paystackConfig, setPaystackConfig] = useState({ publicKey: 'pk_test_fef259dc53273c2348a226b62931b00eb6f4cb7c', amount: 0, email: '', reference: '' });
 
   const handleDonateClick = () => {
     setShowDonationForm(true);
@@ -26,42 +22,6 @@ const HomeScreen = () => {
   const handleVolunteerClick = () => {
     setShowVolunteerForm(true);
     setShowDonationForm(false);
-  };
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setDonationData({ ...donationData, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios.post('/api/initiate-payment/', donationData)
-      .then(response => {
-        const { data } = response;
-        setPaystackConfig({
-          ...paystackConfig,
-          amount: data.amount,
-          email: data.email,
-          reference: data.reference
-        });
-      })
-      .catch(error => {
-        console.error('Error initiating payment:', error);
-      });
-  };
-
-  const onSuccess = (reference) => {
-    axios.get(`/api/verify-payment/?reference=${reference.reference}`)
-      .then(response => {
-        console.log('Payment verified:', response.data);
-      })
-      .catch(error => {
-        console.error('Error verifying payment:', error);
-      });
-  };
-
-  const onClose = () => {
-    console.log('Transaction was not completed, window closed.');
   };
 
   const showForms = showDonationForm || showVolunteerForm;
@@ -85,46 +45,7 @@ const HomeScreen = () => {
         </div>
       )}
 
-      {showDonationForm && (
-        <div className="donation-form">
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              value={donationData.name}
-              onChange={handleInputChange}
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={donationData.email}
-              onChange={handleInputChange}
-              required
-            />
-            <input
-              type="number"
-              name="amount"
-              placeholder="Amount"
-              value={donationData.amount}
-              onChange={handleInputChange}
-              required
-            />
-            <button type="submit">Proceed to Pay</button>
-          </form>
-          <PaystackButton
-            publicKey={paystackConfig.publicKey}
-            amount={paystackConfig.amount}
-            email={paystackConfig.email}
-            reference={paystackConfig.reference}
-            onSuccess={onSuccess}
-            onClose={onClose}
-          />
-        </div>
-      )}
-
+      {showDonationForm && <Donate />}
       {showVolunteerForm && <Registration />}
 
       {!showForms && (

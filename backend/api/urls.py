@@ -1,6 +1,6 @@
 from django.urls import path
 from rest_framework import routers
-from .views import *
+from .views import check_email_exists, InitiatePaymentView, VerifyPaymentView
 from .api import *
 
 router = routers.DefaultRouter()
