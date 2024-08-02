@@ -25,8 +25,6 @@ const RegistrationForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission
-  
-
   const VolunteerData = {
     first_name: formData.firstName,
     last_name: formData.lastName,
