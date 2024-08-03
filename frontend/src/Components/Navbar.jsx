@@ -30,7 +30,7 @@ const Navbar = () => {
             onKeyDown={toggleDrawer(false)}
         >
             <List>
-                {['Home', 'Causes', 'About', 'Contact', 'FAQ'].map((text) => (
+                {['Home','About', 'Contact', 'FAQ'].map((text) => (
                     <ListItem button key={text} component={Link} to={`/${text.toLowerCase()}`}>
                         <ListItemText primary={text} />
                     </ListItem>

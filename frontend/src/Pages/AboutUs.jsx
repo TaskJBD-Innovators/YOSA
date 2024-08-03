@@ -1,11 +1,11 @@
 import React from "react";
 import "../Styles/AboutUs.css";
-import Gallery1 from "../Assets/hands.png";
-import Gallery2 from "../Assets/food.jpeg";
-import Gallery3 from "../Assets/food.jpeg";
-import Gallery4 from "../Assets/food.jpeg";
-import Gallery5 from "../Assets/food.jpeg";
-import Gallery6 from "../Assets/food.jpeg";
+import Gallery1 from "../Assets/Gall1.png";
+import Gallery2 from "../Assets/gall2.png";
+import Gallery3 from "../Assets/gall3.png";
+import Gallery4 from "../Assets/gall4.png";
+import Gallery5 from "../Assets/gall5.png";
+import Gallery6 from "../Assets/gall6.png";
 import Navbar from "../Components/Navbar";
 import Aboutus1 from "../Assets/aboutus1.png";
 import Aboutus2 from "../Assets/aboutus2.png";
