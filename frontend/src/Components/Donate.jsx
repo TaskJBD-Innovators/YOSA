@@ -1,30 +1,57 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { PaystackButton } from 'react-paystack';
 import '../Styles/Donate.css';
 
-const DonationForm = () => {
+const Donate = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     phoneNumber: '',
     email: '',
     donationAmount: '',
-    cardNumber: '',
-    expiryDate: '',
-    cvc: '',
-    billingAddress: ''
+    billingAddress: '',
+  });
+
+  const [paystackConfig, setPaystackConfig] = useState({
+    publicKey: 'pk_test_fef259dc53273c2348a226b62931b00eb6f4cb7c', 
+    amount: 0,
+    email: '',
+    reference: '',
+    currency: 'GHS', 
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    const amountInCedis = formData.donationAmount * 100; // Paystack accepts amount in Kobo
+    setPaystackConfig({
+      ...paystackConfig,
+      amount: amountInCedis,
+      email: formData.email,
+      reference: `ref_${Math.floor(Math.random() * 1000000000 + 1)}`, // Generate a unique reference
+    });
+  };
+
+  const onSuccess = (reference) => {
+    axios.get(`/api/verify-payment/?reference=${reference.reference}`)
+      .then((response) => {
+        console.log('Payment verified:', response.data);
+      })
+      .catch((error) => {
+        console.error('Error verifying payment:', error);
+      });
+  };
+
+  const onClose = () => {
+    console.log('Transaction was not completed, window closed.');
   };
 
   return (
@@ -43,6 +70,7 @@ const DonationForm = () => {
               value={formData.firstName}
               onChange={handleChange}
               placeholder="First Name"
+              required
             />
           </div>
           <div className="form-group">
@@ -53,6 +81,7 @@ const DonationForm = () => {
               value={formData.lastName}
               onChange={handleChange}
               placeholder="Last Name"
+              required
             />
           </div>
           <div className="form-group">
@@ -63,6 +92,7 @@ const DonationForm = () => {
               value={formData.phoneNumber}
               onChange={handleChange}
               placeholder="Phone Number"
+              required
             />
           </div>
           <div className="form-group">
@@ -73,72 +103,53 @@ const DonationForm = () => {
               value={formData.email}
               onChange={handleChange}
               placeholder="Email Address"
+              required
             />
           </div>
         </div>
         <div className="form-group">
           <label>How much do you wish to donate?</label>
           <div className="donation-input">
-            <span className="currency">$</span>
+            <span className="currency">GHS</span>
             <input
-              type="text"
+              type="number"
               name="donationAmount"
               value={formData.donationAmount}
               onChange={handleChange}
               placeholder="Donation Amount"
+              required
             />
-          </div>
-        </div>
-        <div className="form-group">
-          <label>Credit Card</label>
-          <div className="form-grid">
-            <div className="form-group">
-              <input
-                type="text"
-                name="cardNumber"
-                value={formData.cardNumber}
-                onChange={handleChange}
-                placeholder="Card Number"
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="text"
-                name="expiryDate"
-                value={formData.expiryDate}
-                onChange={handleChange}
-                placeholder="MM/YY"
-              />
-            </div>
-            <div className="form-group">
-              <input
-                type="text"
-                name="cvc"
-                value={formData.cvc}
-                onChange={handleChange}
-                placeholder="CVC"
-              />
-            </div>
           </div>
         </div>
         <div className="form-group">
           <label>Billing Address</label>
           <input
             type="text"
-            name="billingAddress"
-            value={formData.billingAddress}
-            onChange={handleChange}
-            placeholder="Address Line 1"
+              name="billingAddress"
+              value={formData.billingAddress}
+              onChange={handleChange}
+              placeholder="Address Line 1"
+              required
           />
         </div>
         <div className="form-group">
           <button type="submit" className="submit-button">
-            Donate
+            Proceed to Pay
           </button>
         </div>
       </form>
+      {paystackConfig.email && paystackConfig.amount > 0 && (
+        <PaystackButton
+          {...paystackConfig}
+          onSuccess={onSuccess}
+          onClose={onClose}
+          text="Pay with Money Mobile or Card"
+          className="paystack-button submit-button"
+          type="submit"
+        />
+      )}
     </div>
   );
 };
 
-export default DonationForm;
+export default Donate;

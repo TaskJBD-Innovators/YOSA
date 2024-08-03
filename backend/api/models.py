@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib import admin, messages
 from django.utils.translation import ngettext
+from paystack.models import PaystackBaseModel
 from phonenumber_field.modelfields import PhoneNumberField
 
 
@@ -68,3 +69,14 @@ class ArticleAdmin(admin.ModelAdmin):
     def message_user(self, request, message):
         messages.info(request, message)
         
+
+
+class Donation(PaystackBaseModel):
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    email = models.EmailField()
+    name = models.CharField(max_length=100)
+    paid = models.BooleanField(default=False)
+    reference = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.name
