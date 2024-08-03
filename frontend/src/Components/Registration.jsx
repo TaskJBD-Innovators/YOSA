@@ -53,6 +53,7 @@ const RegistrationForm = () => {
             })
             .catch((error) => {
                 console.log("There was an error registering volunteer!", error);
+                setMessage("Error registering user")
                 
             });
     };
