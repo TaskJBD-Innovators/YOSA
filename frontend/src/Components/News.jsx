@@ -1,6 +1,9 @@
 import React from 'react';
 import '../Styles/News.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import image1 from '../Assets/volunteer.jpg'
+import image2 from '../Assets/volunteer.jpg'
+import image3 from '../Assets/volunteer.jpg'
 
 const LatestNews = () => {
   const newsData = [
