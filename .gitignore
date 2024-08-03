@@ -49,7 +49,7 @@ media
 # Installer logs 
 pip-log.txt 
 pip-delete-this-directory.txt 
-backend/node_modules
+
 
 # C extensions
 *.so
@@ -170,7 +170,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-backend/.env
+
 
 # Spyder project settings
 .spyderproject
