@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib import admin, messages
 from django.utils.translation import ngettext
-
 from phonenumber_field.modelfields import PhoneNumberField
 
 
@@ -36,12 +35,12 @@ class Donation(models.Model):
     first_name = models.CharField(max_length=30, null=False)
     last_name = models.CharField(max_length=30, null=False)
     email_address = models.EmailField(max_length=30, null=False)
-    amount = models.DecimalField(max_digits=10, decimal_places=2)
-    paid = models.BooleanField(default=False)
-    reference = models.CharField(max_length=100, unique=True)
+    amount = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    verified = models.BooleanField(default=False)
+    reference = models.CharField(max_length=100, unique=True, default="Y")
     
     def __str__(self):
-        return self.name
+        return self.reference
     
     
 

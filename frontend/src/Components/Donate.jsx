@@ -10,7 +10,6 @@ const Donate = () => {
     phoneNumber: '',
     email: '',
     donationAmount: '',
-    billingAddress: '',
   });
 
   const [paystackConfig, setPaystackConfig] = useState({
@@ -122,19 +121,8 @@ const Donate = () => {
           </div>
         </div>
         <div className="form-group">
-          <label>Billing Address</label>
-          <input
-            type="text"
-              name="billingAddress"
-              value={formData.billingAddress}
-              onChange={handleChange}
-              placeholder="Address Line 1"
-              required
-          />
-        </div>
-        <div className="form-group">
           <button type="submit" className="submit-button">
-            Proceed to Pay
+            <PaystackButton/>
           </button>
         </div>
       </form>
