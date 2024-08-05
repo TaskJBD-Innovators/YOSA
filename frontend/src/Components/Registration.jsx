@@ -41,7 +41,7 @@ const RegistrationForm = () => {
         createVolunteer(VolunteerData)
             .then((response) => {
                 console.log("Volunteer registered successfully:", response.data);
-                setMessage("Thank you for volunteering.");
+                setMessage("Thank you for volunteering to YOSA");
 
                 // Clear the form
                 setFormData({
@@ -53,7 +53,7 @@ const RegistrationForm = () => {
             })
             .catch((error) => {
                 console.log("There was an error registering volunteer!", error);
-                setMessage("Error registering user")
+                setMessage("Sorry, the email has alreday been used. Please try again!")
                 
             });
     };

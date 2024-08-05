@@ -1,7 +1,9 @@
+from typing import Iterable
 from django.db import models
 from django.contrib import admin, messages
 from django.utils.translation import ngettext
 from phonenumber_field.modelfields import PhoneNumberField
+from django.core.mail import send_mail, EmailMessage
 
 
 # Create your models here.
@@ -28,8 +30,19 @@ class ContactUs(models.Model):
     message = models.TextField(max_length=500, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
     
-    def __str__(self):
-        return self.email
+    def __str__(self) -> str:
+        return self.message
+    
+    def save(self,*args, **kwargs):
+       email = EmailMessage(
+            'Contact Query',
+            'Here is the message.',
+            
+            to=['stankofb@gmail.com'],
+            
+            )
+       email.send()
+       
 
 class Donation(models.Model):
     first_name = models.CharField(max_length=30, null=False)
@@ -37,7 +50,7 @@ class Donation(models.Model):
     email_address = models.EmailField(max_length=30, null=False)
     amount = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     verified = models.BooleanField(default=False)
-    reference = models.CharField(max_length=100, unique=True, default="Y")
+    reference = models.CharField(max_length=100, unique=True, default="YOSA")
     
     def __str__(self):
         return self.reference

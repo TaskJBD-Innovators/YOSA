@@ -30,7 +30,7 @@ const Donate = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const amountInCedis = formData.donationAmount * 100; // Paystack accepts amount in Kobo
+    const amountInCedis = formData.donationAmount * 100; // Paystack accepts amount in cedis
     setPaystackConfig({
       ...paystackConfig,
       amount: amountInCedis,
@@ -122,7 +122,7 @@ const Donate = () => {
         </div>
         <div className="form-group">
           <button type="submit" className="submit-button">
-            <PaystackButton/>
+            Proceed to Pay
           </button>
         </div>
       </form>

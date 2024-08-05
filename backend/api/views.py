@@ -8,8 +8,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.conf import settings
 from paystackapi.transaction import Transaction
-from .serializers import DonationSerializer
-
+from .serializers import *
+from rest_framework import generics
+from . import models
 # Create your views here.
 def check_email_exists(request):
     if request.method == 'POST':
@@ -86,3 +87,7 @@ class VerifyPaymentView(APIView):
             return Response({'status': 'success', 'data': transaction}, status=200)
         return Response({'status': 'failed', 'data': transaction}, status=400)
 
+
+class ContactList(generics.ListAPIView):
+    queryset = models.ContactUs.objects.all()
+    serializer_class = ContactUsSerializer
