@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Navbar from "../Components/Navbar.jsx";
 import "../Styles/tailwind.css";
-import { createContactUsMessage } from "../api/ApiService.js";
+import { createContactUsMesasge } from "../api/ApiService.js";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -19,7 +19,7 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await createContactUsMessage(formData);
+      const response = await createContactUsMesasge(formData);
       alert(response.data.success ? 'Message sent successfully!' : response.data.error);
     } catch (error) {
       console.error("Form submission error:", error.response ? error.response.data : error.message);
@@ -35,7 +35,7 @@ const ContactUs = () => {
         <img
           src={require("../Assets/contactus.png")}
           alt="Header"
-          className="h-64 w-full object-cover brightness-50"
+          className="h-64 w-full object-cover"
         />
         <h1 className="text-5xl text-center text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           Contact Us

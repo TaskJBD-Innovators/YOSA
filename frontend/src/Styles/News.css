@@ -6,6 +6,8 @@
   .latest-news h2 {
     text-align: center;
     margin-bottom: 20px;
+    font-size: 2em;
+    text-align: left;
   }
   
   .news-container {
@@ -89,6 +91,7 @@
   
   .read-moree:hover {
     background-color:  rgb(3, 45, 3);
+    color: #fff;
   }
   
   .navigation {

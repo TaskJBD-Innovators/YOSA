@@ -1,3 +1,5 @@
+// src/Components/AboutUs.jsx
+
 import React from "react";
 import "../Styles/AboutUs.css";
 import Gallery1 from "../Assets/Gall1.png";
@@ -6,13 +8,15 @@ import Gallery3 from "../Assets/gall3.png";
 import Gallery4 from "../Assets/gall4.png";
 import Gallery5 from "../Assets/gall5.png";
 import Gallery6 from "../Assets/gall6.png";
-import Navbar from "../Components/Navbar";
 import Aboutus1 from "../Assets/aboutus1.png";
 import Aboutus2 from "../Assets/aboutus2.png";
 import hope from "../Assets/hope.png";
-import mission from '../Assets/missionicon.png';
-import vision from '../Assets/visionicon.png';
+import mission from "../Assets/missionicon.png";
+import vision from "../Assets/visionicon.png";
+import Navbar from "../Components/Navbar";  // Ensure Navbar is imported
 import Testimonial from "../Components/Testimonial";
+import Team from "../Components/Team";
+import Members from "../Components/Members";
 
 const features = [
   {
@@ -23,7 +27,7 @@ const features = [
       "Join Your Hand With Us For A Better Life",
       "Let's Do The Right Thing Now",
     ],
-    icon: require('../Assets/houseicon.png'),
+    icon: require("../Assets/houseicon.png"),
   },
   {
     title: "Make A Donation",
@@ -34,7 +38,7 @@ const features = [
       "Let's Do The Right Thing Now",
       "Lorem Ipsum Dolor Sit Amet",
     ],
-    icon: require('../Assets/dolldo.png'),
+    icon: require("../Assets/dolldo.png"),
   },
   {
     title: "Non Profit NGO",
@@ -46,7 +50,7 @@ const features = [
       "Lorem Ipsum Dolor Sit Amet",
       "Children Where We Are Able To Fulfill All",
     ],
-    icon: require('../Assets/shakeicon.png'),
+    icon: require("../Assets/shakeicon.png"),
   },
 ];
 
@@ -59,16 +63,25 @@ const AboutUs = () => {
           <h1>About Us</h1>
         </div>
       </header>
-      <main className="about-us">
+
+      <div className="support-section">
         <div className="images">
-          <img src={Aboutus1} alt="Aboutus1" className="image-large" />
-          <img src={Aboutus2} alt="Aboutus2" className="image-small" />
+          <img
+            src={Aboutus1}
+            alt="Community gathering under trees"
+            className="image image1"
+          />
+          <img
+            src={Aboutus2}
+            alt="People receiving awards"
+            className="image image2"
+          />
         </div>
-        <div className="text-content">
+        <div className="content">
           <h2>About Us</h2>
           <h1>Your Support Is Really Powerful.</h1>
           <p>
-            The secret to happiness lies in helping others. Never underestimate
+          The secret to happiness lies in helping others. Never underestimate
             the difference YOU can make in the lives of the poor, the abused and
             the helpless. The secret to happiness lies in helping others. Never
             underestimate the difference YOU can make in the lives of the poor,
@@ -78,46 +91,57 @@ const AboutUs = () => {
             lies in helping others. Never underestimate the difference YOU can
             make in the lives of the poor, the abused and the helpless.{" "}
           </p>
+          <button className="read-more">Read More</button>
         </div>
-        <div className="charitySection">
-      <div className="charityContent">
-        <h2>Welcome To Charity</h2>
-        <h1>Let Us Come Together To Make A Difference</h1>
-        <p>Towards A World Where Young People Regardless Of Gender, Unlock Their Full Potential Through Youth Leadership, Mentorship, And Empowerment, Contributing To A Brighter Future For All.</p>
-        <div className="missionVision">
-          <div className="mission">
-            <img src={mission} alt="mission" />
-            <h3>Our Mission</h3>
+        <Team />
+        <Members />
+        <div className="charity-section">
+          <div className="charity-content">
+            <h2>Welcome To Charity</h2>
+            <h1>Let Us Come Together To Make A Difference</h1>
             <p>
-              To Empower Young People Of All Genders Through Inclusive Leadership. 
+              Towards A World Where Young People Regardless Of Gender, Unlock
+              Their Full Potential Through Youth Leadership, Mentorship, And
+              Empowerment, Contributing To A Brighter Future For All.
             </p>
-          </div>
-          <div className="vision">
-            <img src={vision} alt="vision" />
-            <h3>Our Vision</h3>
-            <p>
-              Working Towards A World Where Young People, Irrespective Of Gender, Unlock Their Full Potential Through Youth Leadership, Mentorship, And Empowerment. 
-            </p>
+
+            <div className="mission-vision">
+              <div className="mission">
+                <img src={mission} alt="Mission icon" />
+                <h3>Our Mission</h3>
+                <p>
+                  To Empower Young People Of All Genders Through Inclusive
+                  Leadership.
+                </p>
+              </div>
+              <div className="vision">
+                <img src={vision} alt="Vision icon" />
+                <h3>Our Vision</h3>
+                <p>
+                  Working Towards A World Where Young People, Irrespective Of
+                  Gender, Unlock Their Full Potential Through Youth Leadership,
+                  Mentorship, And Empowerment.
+                </p>
+              </div>
+            </div>
+            <div className="progress-bars">
+              <div className="progress-bar">
+                <span>Donations</span>
+                <div className="bar">
+                  <div className="fill" style={{ width: "75%" }}></div>
+                </div>
+                <span>75%</span>
+              </div>
+              <div className="progress-bar">
+                <span>Medical Help</span>
+                <div className="bar">
+                  <div className="fill" style={{ width: "90%" }}></div>
+                </div>
+                <span>90%</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="progressBars">
-          <div className="progressBar">
-            <span>Donations</span>
-            <div className="bar">
-              <div className="fill" style={{ width: '75%' }}></div>
-            </div>
-            <span>75%</span>
-          </div>
-          <div className="progressBar">
-            <span>Medical Help</span>
-            <div className="bar">
-              <div className="fill" style={{ width: '90%' }}></div>
-            </div>
-            <span>90%</span>
-          </div>
-        </div>
-      </div>
-    </div>
         <div className="about-us-section">
           <div className="image-container">
             <img
@@ -135,9 +159,9 @@ const AboutUs = () => {
                 </li>
                 <li>
                   We Have Already Stepped Out And <br />
-                  Start Changing The World
+                  Started Changing The World
                 </li>
-                <li>Keeping Safe Them From War, Inhumanity</li>
+                <li>Keeping Safe From War, Inhumanity</li>
               </ul>
             </div>
           </div>
@@ -149,9 +173,7 @@ const AboutUs = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className={`feature-card ${
-                  index === 0 ? "feature-card-light" : "feature-card-light"
-                }`}
+                className="feature-card"
               >
                 <div className="icon-wrapper">
                   <img
@@ -175,16 +197,22 @@ const AboutUs = () => {
         <section className="gallery-section">
           <h2>Our Gallery</h2>
           <div className="gallery-images">
-            <img src={Gallery1} alt="Gallery1" className="Gallery1" />
-            <img src={Gallery2} alt="Gallery2" className="Gallery2" />
-            <img src={Gallery3} alt="Gallery3" className="Gallery3" />
-            <img src={Gallery4} alt="Gallery4" className="Gallery4" />
-            <img src={Gallery5} alt="Gallery5" className="Gallery5" />
-            <img src={Gallery6} alt="Gallery6" className="Gallery6" />
+            <img src={Gallery1} alt="Gallery 1" className="gallery-image" />
+            <img src={Gallery2} alt="Gallery 2" className="gallery-image" />
+            <img src={Gallery3} alt="Gallery 3" className="gallery-image" />
+            <img src={Gallery4} alt="Gallery 4" className="gallery-image" />
+            <img src={Gallery5} alt="Gallery 5" className="gallery-image" />
+            <img src={Gallery6} alt="Gallery 6" className="gallery-image" />
           </div>
         </section>
-   <Testimonial/>
-      </main>
+
+        <section className="team-section">
+          <h2>Meet Our Team</h2>
+          <Team />
+        </section>
+
+        <Testimonial />
+      </div>
     </div>
   );
 };

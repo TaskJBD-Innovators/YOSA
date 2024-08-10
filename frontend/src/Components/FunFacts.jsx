@@ -15,7 +15,7 @@ const FunFacts = () => {
 
   return (
     <div className="fun-facts-container">
-      <h1>Our Fun Facts</h1>
+      <h2>Our Fun Facts</h2>
       <h1>We Believe That We Can Save <br></br>More Lifes With You</h1>
       <div className="facts">
         {facts.map(fact => (

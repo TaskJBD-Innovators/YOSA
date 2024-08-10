@@ -2,15 +2,16 @@
 .donation-cards-section {
   padding: 32px;
 }
-
-.section-title h3 {
-  font-size: 0.5rem;
-  color: #1c7fd5;
-  margin-bottom: 8px;
+.heading {
+  font-size: 1.5em;
+  text-align: left;
+  margin-top: 5px;
+  color: #090909;
 }
 
+
 .section-heading {
-  font-size: 2rem;
+  font-size: 2em;
   margin-bottom: 32px;
   text-align: left;
 }
