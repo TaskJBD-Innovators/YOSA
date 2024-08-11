@@ -11,17 +11,14 @@ from paystackapi.transaction import Transaction
 from .serializers import *
 from rest_framework import generics
 from . import models
-# Create your views here.
-def check_email_exists(request):
-    if request.method == 'POST':
-        email = request.POST.get('email')
-        if Volunteer.objects.filter(email_address=email).exists():
-            return JsonResponse({'exists': True})
-        else:
-            return JsonResponse({'exists': False})
-    else:
-        return JsonResponse({'error': 'Invalid request'}, status=400)
+from rest_framework.decorators import api_view
 
+# Create your views here.
+@api_view(['GET'])
+def check_email_exists(request):
+    email = request.GET.get('email', '')
+    exists = Volunteer.objects.filter(email_address=email).exists()
+    return Response({'exists': exists})
 
 @csrf_exempt  # Use CSRF protection in production
 def contactus(request):

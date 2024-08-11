@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../Styles/registration.css";
 import volunteer from "../Assets/volunteer.jpg";
-import { createVolunteer } from "../api/ApiService";
+import { createVolunteer, checkEmailExists } from "../api/ApiService";
 
 const RegistrationForm = () => {
     const [formData, setFormData] = useState({
@@ -12,6 +12,7 @@ const RegistrationForm = () => {
     });
 
     const [message, setMessage] = useState("");
+    const [emailError, setEmailError] = useState("");
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -19,17 +20,34 @@ const RegistrationForm = () => {
             ...formData,
             [name]: value,
         });
+        if (name === "email") {
+            setEmailError("");
+        }
     };
+
+    const validateEmail = async () => {
+        try {
+          const response = await checkEmailExists(formData.email);
+          if (response.exists) {
+            setEmailError("This email is already registered.");
+            return false;
+          }
+          return true;
+        } catch (error) {
+          console.error("Error checking email:", error);
+          setEmailError("An error occurred while checking the email.");
+          return false;
+        }
+      };
+    
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         // Check if the email already exists
-        const emailExists = await checkIfEmailExists(formData.email);
-        if (emailExists) {
-            setMessage("This email address is already registered.");
-            return; // Exit the function if the email exists
-        }
+        const isEmailValid = await validateEmail();
+        if (!isEmailValid) return;
+
 
         // Proceed with registration if the email does not exist
         const VolunteerData = {
@@ -84,7 +102,7 @@ const RegistrationForm = () => {
             <div className="form-section">
                 <h2 className="form-title">REGISTER TO VOLUNTEER WITH US</h2>
                 <form onSubmit={handleSubmit} className="registration-form">
-                    {message && <p className="form-message">{message}</p>}
+                    {message && emailError && <p className="form-message">{message}</p>}
                     <div className="form-row">
                         <div className="form-group">
                             <label className="form-label">First Name</label>
