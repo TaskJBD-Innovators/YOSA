@@ -64,11 +64,13 @@ STATUS_CHOICES ={
 }
 
     
-class Article(models.Model):
+class News(models.Model):
     title = models.CharField(max_length=50, null=False)
     body = models.TextField(null=False)
-    status =models.CharField(max_length= 1, choices=STATUS_CHOICES)
+    author =models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to='news_images/')
+    status =models.CharField(max_length= 1, choices=STATUS_CHOICES)
 
     def __str__(self):
         return self.title
@@ -79,14 +81,17 @@ def make_published(modeladmin, request, queryset):
     queryset.update(status="p")
 
 
-class ArticleAdmin(admin.ModelAdmin):
-    list_display = ["title", "status"]
+class NewsAdmin(admin.ModelAdmin):
+    list_display = ("title", "status", "author",)
+    search_fields = ("title", "author")
     ordering = ["title"]
     actions = [make_published]
 
-    def message_user(self, request, message):
+    def message_user(self, request, message, level):
         messages.info(request, message)
         
+class VolunteerAdmin(admin.ModelAdmin):
+    list_display = ("last_name", "first_name", "gender")
 
 
 

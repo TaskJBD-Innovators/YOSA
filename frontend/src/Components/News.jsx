@@ -1,35 +1,22 @@
-import React from 'react';
-import '../Styles/News.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import image1 from '../Assets/volunteer.jpg'
-import image2 from '../Assets/volunteer.jpg'
-import image3 from '../Assets/volunteer.jpg'
+import React, { useState, useEffect } from "react";
+import "../Styles/News.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import axios from "axios";
 
 const LatestNews = () => {
-  const newsData = [
-    {
-      author: 'Esther Howard',
-      date: '12 Sep 2021',
-      title: 'Charity, Expectations Vs. Reality',
-      description: 'Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Sed Diam Nonumy Tempor Invidunt Ut Labore Et Magna Aliquyam Erat, Sed Diam Voluptua......',
-      image: image1
-    },
-    {
-      author: 'Jacob Jones',
-      date: '22 Aug 2021',
-      title: "This Week's Top Stories About Charity",
-      description: 'Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Sed Diam Nonumy Tempor Invidunt Ut Labore Et Magna Aliquyam Erat, Sed Diam Voluptua......',
-      image: image2
-    },
-    {
-      author: 'Floyd Miles',
-      date: '30 Jul 2021',
-      title: 'Why You Should Focus On Charity',
-      description: 'Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Sed Diam Nonumy Tempor Invidunt Ut Labore Et Magna Aliquyam Erat, Sed Diam Voluptua......',
-      image: image3
-    }
-  ];
-  
+  const [newsData, setNewsData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("/api/news")
+      .then((response) => {
+        console.log("Fetched data", response.data);
+        setNewsData(response.data);
+      })
+      .catch((error) => {
+        console.error("There was an error fetching the news!", error);
+      });
+  }, []);
 
   return (
     <div className="latest-news">
@@ -37,14 +24,18 @@ const LatestNews = () => {
       <div className="news-container">
         {newsData.map((news, index) => (
           <div key={index} className="news-card">
-            <img src={news.image} alt={news.title} className="news-image" />
+            <img src={`http://localhost:3000${news.image}`} alt={news.title} className="news-image" />
             <div className="news-content">
               <div className="news-meta">
-                <span className="author"><i className="fa fa-user"></i> {news.author}</span>
-                <span className="date"><i className="fa fa-calendar"></i> {news.date}</span>
+                <span className="author">
+                  <i className="fa fa-user"></i> {news.author}
+                </span>
+                <span className="date">
+                  <i className="fa fa-calendar"></i> {news.date}
+                </span>
               </div>
               <h3>{news.title}</h3>
-              <p>{news.description}</p>
+              <p>{news.body}</p>
               <button className="read-moree">Read More</button>
             </div>
           </div>
@@ -55,7 +46,7 @@ const LatestNews = () => {
         <button className="nav-button">&gt;</button>
       </div>
     </div>
-  );  
+  );
 };
 
 export default LatestNews;

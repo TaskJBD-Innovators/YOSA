@@ -9,9 +9,9 @@ class VolunteerSerializer(serializers.ModelSerializer):
         fields = '__all__' 
         
         
-class ArticleSerializer(serializers.ModelSerializer):
+class NewsSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Article
+        model = News
         fields = '__all__'
         
 class ContactUsSerializer(serializers.ModelSerializer):
