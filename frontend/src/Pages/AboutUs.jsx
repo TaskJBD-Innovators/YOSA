@@ -13,6 +13,7 @@ import hope from "../Assets/hope.png";
 import mission from '../Assets/missionicon.png';
 import vision from '../Assets/visionicon.png';
 import Testimonial from "../Components/Testimonial";
+import Team from "../Components/Team";
 
 const features = [
   {
@@ -79,6 +80,7 @@ const AboutUs = () => {
             make in the lives of the poor, the abused and the helpless.{" "}
           </p>
         </div>
+        <Team/>
         <div className="charitySection">
       <div className="charityContent">
         <h2>Welcome To Charity</h2>

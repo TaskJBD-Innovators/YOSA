@@ -24,18 +24,28 @@ const Team = () => {
       title: 'UI Engineer',
       image: 'https://placehold.co/150x150?text=Ryan',
     },
+    {
+      name: 'Ryan Johnson',
+      title: 'UI Engineer',
+      image: 'https://placehold.co/150x150?text=Ryan',
+    },
+    {
+      name: 'Ryan Johnson',
+      title: 'UI Engineer',
+      image: 'https://placehold.co/150x150?text=Ryan',
+    },
   ];
 
   return (
     <div className="team-container">
-      <h2 className="headingg" >Our Team</h2>
+      <h2 className="headingg" >Meet Our Team</h2>
+      <h2 className="headingg" >YOUTH SPACE AFRIKA (YoSA) BOARD OF ADVISORS</h2>
       <div className="team-members">
         {teamMembers.map((member, index) => (
           <div className="team-member" key={index}>
             <img src={member.image} alt={member.name} />
             <h3 className="temp">{member.name}</h3>
             <p className="teamp">{member.title}</p>
-            <button className="view-bio">View Bio</button>
           </div>
         ))}
       </div>

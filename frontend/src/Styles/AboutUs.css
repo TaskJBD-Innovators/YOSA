@@ -85,11 +85,10 @@
 }
 
 .text-content p {
-  font-size: 1vw;
-  margin-bottom: 20px;
+  font-size: 1em;
+  color: #666;
   line-height: 1.5;
-  color: #333;
-  text-align: left;
+  margin-bottom: 20px;
 }
 
 .about-section,.gallery-section {
