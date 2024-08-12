@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Navbar from "../Components/Navbar.jsx";
 import "../Styles/tailwind.css";
 import { createContactUsMesasge } from "../api/ApiService.js";
@@ -10,7 +10,16 @@ const ContactUs = () => {
     email: "",
     phone: "",
     message: "",
+    status: "",
   });
+
+  const ContactData ={
+    first_name: formData.firstname,
+    last_name: formData.lastname,
+    email: formData.email,
+    phone_number: formData.phone,
+    message: formData.message,
+  }
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,15 +28,26 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+<<<<<<< HEAD
       const response = await createContactUsMesasge(formData);
       alert(response.data.success ? 'Message sent successfully!' : response.data.error);
+=======
+      createContactUsMesasge(ContactData).then((response) => {
+        setFormData({
+          firstname: "",
+          lastname: "",
+          email: "",
+          phone: "",
+          message: "",
+          status: "success",
+        });
+      });
+>>>>>>> fe7ed2ec93488f739366bb67ddb0dd07e2802e4b
     } catch (error) {
-      console.error("Form submission error:", error.response ? error.response.data : error.message);
-      alert('An error occured while the submitting the form.');
+      console.log(error);
+      setFormData({ status: "error" });
     }
   };
-
-  
 
   return (
     <div className="relative">
@@ -46,13 +66,17 @@ const ContactUs = () => {
       </div>
 
       <div className="mx-6 md:mx-20">
+        {formData.status === "success" && <p>Thank you for contacting us!</p>}
+        {formData.status === "error" && (
+          <p>Something went wrong! Please try again later!</p>
+        )}
         <p className="text-lg font-bold mt-5">Get In Touch</p>
         <h2 className="text-3xl font-bold">Send Me A Message</h2>
       </div>
 
       <div className="flex h-full mt-5 flex-col sm:flex-row md:flex-row gap-5 gap-x-10 align-center justify-center px-2 md:mx-20">
         <div className="sm:w-2/3 h-full w-full p-2 ">
-        <form onSubmit={handleSubmit} >
+          <form onSubmit={handleSubmit}>
             <div name="name-section" className="flex gap-2 gap-x-10 flex-row">
               <div name="first-name" className="w-1/2 flex flex-col ml-1 ">
                 <label htmlFor="first-name">First Name</label>
@@ -198,6 +222,5 @@ const ContactUs = () => {
     </div>
   );
 };
-
 
 export default ContactUs;

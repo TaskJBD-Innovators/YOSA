@@ -1,5 +1,5 @@
 from api.models import *
-from rest_framework import viewsets, permissions
+from rest_framework import viewsets, permissions, generics
 from .serializers import *
 
 #Volunteer Viewset
@@ -10,13 +10,13 @@ class VolunteerViewSet(viewsets.ModelViewSet):
     ]
     serializer_class = VolunteerSerializer
     
-#Article Viewset    
-class ArticleViewSet(viewsets.ModelViewSet):
-    queryset = Article.objects.all()
+#News Viewset    
+class NewsViewSet(viewsets.ModelViewSet):
+    queryset = News.objects.all()
     permission_classes =[
         permissions.AllowAny
     ]
-    serializer_class = ArticleSerializer
+    serializer_class = NewsSerializer
     
 #Contact Us Viewset    
 class ContactUsViewSet(viewsets.ModelViewSet):

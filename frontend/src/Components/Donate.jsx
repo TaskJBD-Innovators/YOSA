@@ -10,7 +10,6 @@ const Donate = () => {
     phoneNumber: '',
     email: '',
     donationAmount: '',
-    billingAddress: '',
   });
 
   const [paystackConfig, setPaystackConfig] = useState({
@@ -31,7 +30,7 @@ const Donate = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const amountInCedis = formData.donationAmount * 100; // Paystack accepts amount in Kobo
+    const amountInCedis = formData.donationAmount * 100; // Paystack accepts amount in cedis
     setPaystackConfig({
       ...paystackConfig,
       amount: amountInCedis,
@@ -120,17 +119,6 @@ const Donate = () => {
               required
             />
           </div>
-        </div>
-        <div className="form-group">
-          <label>Billing Address</label>
-          <input
-            type="text"
-              name="billingAddress"
-              value={formData.billingAddress}
-              onChange={handleChange}
-              placeholder="Address Line 1"
-              required
-          />
         </div>
         <div className="form-group">
           <button type="submit" className="submit-button">

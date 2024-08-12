@@ -1,8 +1,9 @@
+from typing import Iterable
 from django.db import models
 from django.contrib import admin, messages
 from django.utils.translation import ngettext
-from paystack.models import PaystackBaseModel
 from phonenumber_field.modelfields import PhoneNumberField
+from django.core.mail import send_mail, EmailMessage
 
 
 # Create your models here.
@@ -29,13 +30,30 @@ class ContactUs(models.Model):
     message = models.TextField(max_length=500, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
     
-    def __str__(self):
-        return self.email
+    def __str__(self) -> str:
+        return self.message
+    
+    def save(self,*args, **kwargs):
+       email = EmailMessage(
+            'Contact Query',
+            'Here is the message.',
+            
+            to=['stankofb@gmail.com'],
+            
+            )
+       email.send()
+       
 
 class Donation(models.Model):
     first_name = models.CharField(max_length=30, null=False)
     last_name = models.CharField(max_length=30, null=False)
     email_address = models.EmailField(max_length=30, null=False)
+    amount = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    verified = models.BooleanField(default=False)
+    reference = models.CharField(max_length=100, unique=True, default="YOSA")
+    
+    def __str__(self):
+        return self.reference
     
     
 
@@ -46,11 +64,13 @@ STATUS_CHOICES ={
 }
 
     
-class Article(models.Model):
+class News(models.Model):
     title = models.CharField(max_length=50, null=False)
     body = models.TextField(null=False)
-    status =models.CharField(max_length= 1, choices=STATUS_CHOICES)
+    author =models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to='news_images/')
+    status =models.CharField(max_length= 1, choices=STATUS_CHOICES)
 
     def __str__(self):
         return self.title
@@ -61,22 +81,20 @@ def make_published(modeladmin, request, queryset):
     queryset.update(status="p")
 
 
-class ArticleAdmin(admin.ModelAdmin):
-    list_display = ["title", "status"]
+class NewsAdmin(admin.ModelAdmin):
+    list_display = ("title", "status", "author",)
+    search_fields = ("title", "author")
     ordering = ["title"]
     actions = [make_published]
 
-    def message_user(self, request, message):
+    def message_user(self, request, message, level):
         messages.info(request, message)
         
+class VolunteerAdmin(admin.ModelAdmin):
+    list_display = ("last_name", "first_name", "gender")
 
 
-class Donation(PaystackBaseModel):
-    amount = models.DecimalField(max_digits=10, decimal_places=2)
-    email = models.EmailField()
-    name = models.CharField(max_length=100)
-    paid = models.BooleanField(default=False)
-    reference = models.CharField(max_length=100, unique=True)
 
-    def __str__(self):
-        return self.name
+    
+
+  

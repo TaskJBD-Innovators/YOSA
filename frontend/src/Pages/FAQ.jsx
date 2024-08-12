@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
 import twogirls from "../Assets/twogirls.png";
-import FAQimg from "../Assets/FAQ.jpg"; // Importing the image directly
+import FAQimg from "../Assets/FAQ.jpg";
 import supportImage from "../Assets/callsupport.png";
 import Address from "../Assets/Address.png";
 import chat from "../Assets/chatwithus.png";
@@ -11,7 +11,7 @@ const FAQ = () => {
     <div className="bg-background text-foreground ">
       <header
         className="relative bg-cover bg-center h-64"
-        style={{ backgroundImage: `url(${FAQimg})` }} // Using inline styles
+        style={{ backgroundImage: `url(${FAQimg})` }} 
       >
         <Navbar />
         <div className="relative z-10 flex items-center justify-center h-full ">
