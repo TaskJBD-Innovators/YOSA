@@ -4,25 +4,30 @@
   height: 50vh;
   background: url('../Assets/aboutuss.png') no-repeat center center/cover;
   color: white;
-}
-
-.navbar {
+  background-repeat: no-repeat;
+  background-position: center center;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-}
-
-.logo {
-  height: 40px;
-}
-
-.header-text {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  justify-content: center;
   text-align: center;
 }
 
+
+.header-text {
+  max-width: 40%;
+  padding: 20px;
+  border-radius: 10px;
+
+ 
+}
+.header-text h1{
+  background: rgba(56, 2, 68, 0.4);
+  font-size: 24px;
+  margin-top: 200px;
+  text-align: center;
+  border-radius: 10px;
+}
 .main-content {
   display: flex;
   align-items: center;
@@ -45,7 +50,7 @@
   border: 5px solid #bdebe0;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   margin-right: 800px;
-
+  border-radius: 10px;
 }
 
 .image-small {
@@ -53,6 +58,7 @@
   height: 300px;
   position: absolute;
   bottom: -150px;
+  border-radius: 10px;
   left: 300px;
   border: 5px solid #bdebe0;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -62,11 +68,11 @@
   max-width: 400px;
   box-sizing: border-box;
   margin-left: 700px;
-  margin-top: -200px;
+  margin-top: -400px;
 }
 
 .text-content h2 {
-  font-size: 1em;
+  font-size: 2vw;
   color: #090909;
   text-align: left;
   margin-top: 5px;
@@ -79,12 +85,9 @@
 }
 
 .text-content p {
-  font-size: 0.9em;
-  margin-bottom: 20px;
-  line-height: 1.5;
-  color: #333;
-  text-align: left;
-}
+  font-size: 1.1em;
+  color: #666;
+  line-height: 1.5;}
 
 .about-section,.gallery-section {
   margin: 100px 0;
@@ -396,16 +399,17 @@
   }
 
   .text-content h1 {
-    font-size: 1.8em;
+    font-size: 2.5em;
     
   }
 
   .text-content h2 {
     margin-top: 100px;
+    font-size: 2.5em;
   }
 
   .text-content p {
-    font-size: 0.8em;
+    font-size: 2.5em;
     
   }
 }
@@ -422,15 +426,15 @@
   }
 
   .text-content h1 {
-    font-size: 1.5em;
+    font-size: 1em;
   }
 
   .text-content h2 {
-    font-size: 0.8em;
+    font-size: 1em;
   }
 
   .text-content p {
-    font-size: 0.7em;
+    font-size: 1em;
   }
 }
 
@@ -458,7 +462,9 @@
     margin-right: 0;
  
   }
-
+.charityContent{
+  font-size: 0.8em;
+}
   .text-content {
     margin-left: 0;
     margin-top: 20px;
@@ -479,9 +485,9 @@
   }
 
   .main-image {
-    width: 300px;
+    width: 500px;
     margin-left: 70px;
-    height: 200px;
+    height: 250px;
   }
 
   .overlay {
@@ -491,7 +497,7 @@
     height: auto;
     margin-top: 2x;
     padding: 1rem 0;
-    font-size: 0.6rem;
+    font-size: 0.8em;
   }
 
   .overlay-text {
@@ -509,15 +515,15 @@
   }
 
   .text-content h2 {
-    font-size: 0.8em;
+    font-size: 1em;
   }
 
   .text-content p {
-    font-size: 0.6em;
+    font-size: 1em;
   }
 
   .mission-section h1 {
-    font-size: 1.5em;
+    font-size: 1em;
   }
 
   .mission-section h2 {

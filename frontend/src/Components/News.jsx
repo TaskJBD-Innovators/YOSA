@@ -1,7 +1,16 @@
+<<<<<<< HEAD
+import React from 'react';
+import '../Styles/News.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import image1 from '../Assets/News2.png';
+import image2 from '../Assets/News1.png';
+import image3 from '../Assets/News3.png';
+=======
 import React, { useState, useEffect } from "react";
 import "../Styles/News.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import axios from "axios";
+>>>>>>> fe7ed2ec93488f739366bb67ddb0dd07e2802e4b
 
 const LatestNews = () => {
   const [newsData, setNewsData] = useState([]);

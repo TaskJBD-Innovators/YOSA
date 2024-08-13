@@ -28,6 +28,10 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+<<<<<<< HEAD
+      const response = await createContactUsMesasge(formData);
+      alert(response.data.success ? 'Message sent successfully!' : response.data.error);
+=======
       createContactUsMesasge(ContactData).then((response) => {
         setFormData({
           firstname: "",
@@ -38,6 +42,7 @@ const ContactUs = () => {
           status: "success",
         });
       });
+>>>>>>> fe7ed2ec93488f739366bb67ddb0dd07e2802e4b
     } catch (error) {
       console.log(error);
       setFormData({ status: "error" });
@@ -50,7 +55,7 @@ const ContactUs = () => {
         <img
           src={require("../Assets/contactus.png")}
           alt="Header"
-          className="h-64 w-full object-cover brightness-50"
+          className="h-64 w-full object-cover"
         />
         <h1 className="text-5xl text-center text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           Contact Us

@@ -8,8 +8,8 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-section logo">
           <img src={yosaIcon} alt="Yosa Logo" className="yosa-icon" />
-          <p>10k</p>
-          <p>Worldwide Client Already Connected</p>
+          <p>Youth Space Afrika</p>
+          <p>Help make the world Better</p>
         </div>
         <div className="footer-section quick-link">
           <h3>Quick Link</h3>
@@ -29,7 +29,9 @@ const Footer = () => {
         </div>
         <div className="footer-section address">
           <h3>Address</h3>
-          <p>2464 Royal Ln. Mesa, New Jersey 45463</p>
+          <p>Dansoman, Asore Daaho</p>
+          <p>+233 201 012 583</p>
+          <p>youthspaceafrika@gmail.com</p>
         </div>
         <div className="footer-section newsletter">
           <h3>Newsletter</h3>
@@ -45,7 +47,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>Copyright 2024. JUSTINE ADDO</p>
+        <p>Copyright 2024. Task JBD Innovators</p>
       </div>
     </footer>
   );
