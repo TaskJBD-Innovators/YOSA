@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../Styles/News.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import image1 from '../Assets/News2.png';
-import image2 from '../Assets/News1.png';
-import image3 from '../Assets/News3.png';
+import ReactMarkdown from 'react-markdown';
+
 
 const LatestNews = () => {
   const [newsData, setNewsData] = useState([]);
@@ -20,6 +19,10 @@ const LatestNews = () => {
         console.error("There was an error fetching the news!", error);
       });
   }, []);
+
+  const MarkdownRenderer = ({ content }) => {
+    return <ReactMarkdown>{content}</ReactMarkdown>;
+};
 
   return (
     <div className="latest-news">
@@ -38,7 +41,7 @@ const LatestNews = () => {
                 </span>
               </div>
               <h3>{news.title}</h3>
-              <p>{news.body}</p>
+              <MarkdownRenderer content={news.body} />
               <button className="read-moree">Read More</button>
             </div>
           </div>

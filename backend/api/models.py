@@ -1,10 +1,9 @@
-from typing import Iterable
 from django.db import models
 from django.contrib import admin, messages
 from django.utils.translation import ngettext
 from phonenumber_field.modelfields import PhoneNumberField
 from django.core.mail import send_mail, EmailMessage
-
+from markdownx.models import MarkdownxField
 
 # Create your models here.
 class Volunteer(models.Model):
@@ -66,7 +65,7 @@ STATUS_CHOICES ={
     
 class News(models.Model):
     title = models.CharField(max_length=50, null=False)
-    body = models.TextField(null=False)
+    body = MarkdownxField()
     author =models.CharField(max_length=100)
     date = models.DateField(auto_now_add=True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -93,7 +92,6 @@ class NewsAdmin(admin.ModelAdmin):
         
 class VolunteerAdmin(admin.ModelAdmin):
     list_display = ("last_name", "first_name", "gender")
-
 
 
     
