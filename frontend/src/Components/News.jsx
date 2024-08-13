@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { fetchNews } from '../api/ApiService';
 import '../Styles/News.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import ReactMarkdown from 'react-markdown';
@@ -9,8 +9,7 @@ const LatestNews = () => {
   const [newsData, setNewsData] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:8000/api/news/")
+    fetchNews()
       .then((response) => {
         console.log("Fetched data", response.data);
         setNewsData(response.data);
