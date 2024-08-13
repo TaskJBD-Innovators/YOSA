@@ -1,23 +1,17 @@
-<<<<<<< HEAD
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import '../Styles/News.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import image1 from '../Assets/News2.png';
 import image2 from '../Assets/News1.png';
 import image3 from '../Assets/News3.png';
-=======
-import React, { useState, useEffect } from "react";
-import "../Styles/News.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import axios from "axios";
->>>>>>> fe7ed2ec93488f739366bb67ddb0dd07e2802e4b
 
 const LatestNews = () => {
   const [newsData, setNewsData] = useState([]);
 
   useEffect(() => {
     axios
-      .get("/api/news")
+      .get("http://localhost:8000/api/news/")
       .then((response) => {
         console.log("Fetched data", response.data);
         setNewsData(response.data);
@@ -33,7 +27,7 @@ const LatestNews = () => {
       <div className="news-container">
         {newsData.map((news, index) => (
           <div key={index} className="news-card">
-            <img src={`http://localhost:3000${news.image}`} alt={news.title} className="news-image" />
+            <img src={news.image} alt={news.title} className="news-image" />
             <div className="news-content">
               <div className="news-meta">
                 <span className="author">

@@ -28,21 +28,8 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-<<<<<<< HEAD
       const response = await createContactUsMesasge(formData);
       alert(response.data.success ? 'Message sent successfully!' : response.data.error);
-=======
-      createContactUsMesasge(ContactData).then((response) => {
-        setFormData({
-          firstname: "",
-          lastname: "",
-          email: "",
-          phone: "",
-          message: "",
-          status: "success",
-        });
-      });
->>>>>>> fe7ed2ec93488f739366bb67ddb0dd07e2802e4b
     } catch (error) {
       console.log(error);
       setFormData({ status: "error" });

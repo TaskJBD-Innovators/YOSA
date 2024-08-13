@@ -83,3 +83,7 @@ class VerifyPaymentView(APIView):
 class ContactList(generics.ListAPIView):
     queryset = models.ContactUs.objects.all()
     serializer_class = ContactUsSerializer
+    
+class NewsList(generics.ListAPIView):
+    queryset = models.News.objects.all()
+    serializer_class = NewsSerializer
