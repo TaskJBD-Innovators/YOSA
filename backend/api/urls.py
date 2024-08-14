@@ -7,7 +7,7 @@ from . import views
 router = routers.DefaultRouter()
 router.register('api/volunteers',VolunteerViewSet, 'Volunteer')
 router.register('api/contactus',ContactUsViewSet, 'ContactUs')
-
+router.register('api/donations',DonationViewset,'Donation')
 
 urlpatterns = [
    path('initiate-payment/', InitiatePaymentView.as_view(), name='initiate_payment'),
