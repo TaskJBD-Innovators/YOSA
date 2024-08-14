@@ -159,9 +159,9 @@ GMAIL_EMAIL = os.getenv('GMAIL_USER_EMAIL')
 GMAIL_PASSWORD = os.getenv('GMAIL_USER_PASSWORD')
 
 # EMAIL CONFIGURATION (for contact form)
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# # EMAIL_HOST = 'smtp.gmail.com'
-# # EMAIL_HOST_USER = GMAIL_EMAIL
-# # EMAIL_HOST_PASSWORD = GMAIL_PASSWORD
-# # EMAIL_PORT = 587
-# # EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = GMAIL_EMAIL
+EMAIL_HOST_PASSWORD = GMAIL_PASSWORD
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
