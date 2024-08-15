@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'api.apps.ApiConfig',
     'rest_framework',
     'markdownx',
+    'markdownfield',
     'corsheaders',
     'phonenumber_field',
     'paystack',

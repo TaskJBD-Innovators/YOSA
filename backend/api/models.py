@@ -5,6 +5,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 from django.core.mail import send_mail, EmailMessage
 from markdownx.models import MarkdownxField
 
+
 # Create your models here.
 class Volunteer(models.Model):
     first_name = models.CharField(max_length=30, null=False)
