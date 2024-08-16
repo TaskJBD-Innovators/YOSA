@@ -44,6 +44,7 @@ class ContactUs(models.Model):
        
 
 class Donation(models.Model):
+    id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=30, null=False)
     last_name = models.CharField(max_length=30, null=False)
     email_address = models.EmailField(max_length=30, null=False)
