@@ -26,3 +26,10 @@ class ContactUsViewSet(viewsets.ModelViewSet):
     ]
     serializer_class = ContactUsSerializer
     
+#Donation Viewset
+class DonationViewset(viewsets.ModelViewSet):
+    queryset = Donation.objects.all()
+    permission_classes =[
+        permissions.AllowAny
+    ]
+    serializer_class = DonationSerializer

@@ -33,13 +33,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'api.apps.ApiConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'api.apps.ApiConfig',
     'rest_framework',
     'markdownx',
     'markdownfield',
@@ -160,9 +160,9 @@ GMAIL_EMAIL = os.getenv('GMAIL_USER_EMAIL')
 GMAIL_PASSWORD = os.getenv('GMAIL_USER_PASSWORD')
 
 # EMAIL CONFIGURATION (for contact form)
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# # EMAIL_HOST = 'smtp.gmail.com'
-# # EMAIL_HOST_USER = GMAIL_EMAIL
-# # EMAIL_HOST_PASSWORD = GMAIL_PASSWORD
-# # EMAIL_PORT = 587
-# # EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = GMAIL_EMAIL
+EMAIL_HOST_PASSWORD = GMAIL_PASSWORD
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

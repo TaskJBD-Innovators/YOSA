@@ -51,11 +51,9 @@ class Donation(models.Model):
     amount = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     verified = models.BooleanField(default=False)
     reference = models.CharField(max_length=100, unique=True, default="YOSA")
-    
+
     def __str__(self):
         return self.reference
-    
-    
 
 STATUS_CHOICES ={
     "d": "Draft",
