@@ -31,17 +31,8 @@ class ContactUs(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self) -> str:
-        return self.message
+        return self.email
     
-    def save(self,*args, **kwargs):
-       email = EmailMessage(
-            'Contact Query',
-            'Here is the message.',
-            
-            to=['stankofb@gmail.com'],
-            
-            )
-       email.send()
        
 
 class Donation(models.Model):
