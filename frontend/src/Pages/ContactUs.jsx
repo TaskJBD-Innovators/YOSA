@@ -29,28 +29,6 @@ const ContactUs = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-<<<<<<< HEAD
-    try {
-
-      const response = await createContactUsMesasge(formData);
-      alert(response.data.success ? 'Message sent successfully!' : response.data.error);
-      createContactUsMesasge(ContactData).then((response) => {
-        setFormData({
-          firstname: "",
-          lastname: "",
-          email: "",
-          phone: "",
-          message: "",
-          status: "success",
-        });
-      });
-
-    } catch (error) {
-      console.log(error);
-      setFormData({ status: "error" });
-    }
-  };
-=======
     
     createContactUsMesasge(ContactData)
     .then((response) => {
@@ -71,7 +49,6 @@ const ContactUs = () => {
     });
   }
 
->>>>>>> 906fc578be8df656884793489d1da659415d125e
 
   return (
     <div className="relative">

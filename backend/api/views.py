@@ -27,8 +27,7 @@ class VerifyPaymentView(APIView):
             donation.save()
             return Response({'status': 'success', 'data': transaction}, status=200)
         return Response({'status': 'failed', 'data': transaction}, status=400)
-
-
+    
 class ContactList(generics.ListAPIView):
     queryset = models.ContactUs.objects.all()
     serializer_class = ContactUsSerializer
@@ -40,3 +39,4 @@ class NewsList(generics.ListAPIView):
 class GalleryList(generics.ListAPIView):
     queryset = models.Gallery.objects.all()
     serializer_class = GallerySerializer
+    

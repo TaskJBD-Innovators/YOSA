@@ -1,23 +1,12 @@
  import React, { useEffect, useState } from "react";
 import "../Styles/AboutUs.css";
-import Gallery1 from "../Assets/Gall1.png";
-import Gallery2 from "../Assets/gall2.png";
-import Gallery3 from "../Assets/gall3.png";
-import Gallery4 from "../Assets/gall4.png";
-import Gallery5 from "../Assets/gall5.png";
-import Gallery6 from "../Assets/gall6.png";
 import Navbar from "../Components/Navbar";
 import hope from "../Assets/hope.png";
 import mission from '../Assets/missionicon.png';
 import vision from '../Assets/visionicon.png';
 import Testimonial from "../Components/Testimonial";
 import Team from "../Components/Team";
-<<<<<<< HEAD
 import { fetchgallery } from "../api/ApiService";
-=======
-import teamImage from '../Assets/aboutus2.png';
-
->>>>>>> 5a4025f22323e4fabc872ad7d44de5d2c6f63b06
 
 const features = [
   {
