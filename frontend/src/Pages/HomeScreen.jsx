@@ -8,7 +8,8 @@ import Navbar from '../Components/Navbar';
 import Donate from '../Components/Donate';
 import Registration from '../Components/Registration';
 import CharitySection from '../Components/CharitySection';
-import News from '../Components/News';
+
+
 
 const HomeScreen = () => {
   const [showDonationForm, setShowDonationForm] = useState(false);
@@ -77,7 +78,8 @@ const HomeScreen = () => {
           <CharitySection />
           <FunFacts />
           <CauseSection />
-          <News />
+         
+          
         </>
       )}
     </div>

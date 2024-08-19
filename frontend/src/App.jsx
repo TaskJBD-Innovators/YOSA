@@ -7,6 +7,7 @@ import ContactUs from './Pages/ContactUs';
 import FAQ from './Pages/FAQ';
 import LoaderComponent from './Components/Loader';
 
+
 const App = () => {
   const [loading, setLoading] = useState(false);
   const location = useLocation();
