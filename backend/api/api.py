@@ -33,3 +33,5 @@ class DonationViewset(viewsets.ModelViewSet):
         permissions.AllowAny
     ]
     serializer_class = DonationSerializer
+    
+

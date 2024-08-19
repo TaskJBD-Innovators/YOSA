@@ -1,4 +1,4 @@
- import React from "react";
+ import React, { useEffect, useState } from "react";
 import "../Styles/AboutUs.css";
 import Gallery1 from "../Assets/Gall1.png";
 import Gallery2 from "../Assets/gall2.png";
@@ -14,6 +14,7 @@ import mission from '../Assets/missionicon.png';
 import vision from '../Assets/visionicon.png';
 import Testimonial from "../Components/Testimonial";
 import Team from "../Components/Team";
+import { fetchgallery } from "../api/ApiService";
 
 const features = [
   {
@@ -51,7 +52,25 @@ const features = [
   },
 ];
 
+
+
 const AboutUs = () => {
+
+  const [image, setImage] = useState([])
+
+  useEffect(() => {
+    fetchgallery()
+    .then((response) => {
+      console.log("Fetched data", response.data);
+      setImage(response.data);
+    }).catch((error) => {
+      console.error("There was an error fetching images!", error);
+    });
+  }, []);
+
+
+
+
   return (
     <div className="about-page">
       <header className="header">
@@ -176,13 +195,10 @@ const AboutUs = () => {
 
         <section className="gallery-section">
           <h2>Our Gallery</h2>
-          <div className="gallery-images">
-            <img src={Gallery1} alt="Gallery1" className="Gallery1" />
-            <img src={Gallery2} alt="Gallery2" className="Gallery2" />
-            <img src={Gallery3} alt="Gallery3" className="Gallery3" />
-            <img src={Gallery4} alt="Gallery4" className="Gallery4" />
-            <img src={Gallery5} alt="Gallery5" className="Gallery5" />
-            <img src={Gallery6} alt="Gallery6" className="Gallery6" />
+          <div  className="gallery-images">
+          {image.map((img, index) => (
+            <img src={img.image} key={index} alt={`Gallery ${index}`} className="Gallery1" />
+          ))}
           </div>
         </section>
    <Testimonial/>

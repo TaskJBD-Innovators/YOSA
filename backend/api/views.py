@@ -1,12 +1,6 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponse, JsonResponse
 from .models import *
-from django.core.mail import send_mail
-from django.views.decorators.csrf import csrf_exempt
-import re
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from django.conf import settings
 from paystackapi.transaction import Transaction
 from .serializers import *
 from rest_framework import generics
@@ -42,3 +36,7 @@ class ContactList(generics.ListAPIView):
 class NewsList(generics.ListAPIView):
     queryset = models.News.objects.all()
     serializer_class = NewsSerializer
+    
+class GalleryList(generics.ListAPIView):
+    queryset = models.Gallery.objects.all()
+    serializer_class = GallerySerializer
