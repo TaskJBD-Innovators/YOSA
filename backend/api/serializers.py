@@ -24,7 +24,7 @@ class ContactUsSerializer(serializers.ModelSerializer):
 class DonationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Donation
-        fields = ['amount', 'email', 'name', 'reference']
+        fields = ['id','amount', 'email_address', 'first_name', 'last_name', 'reference']
         read_only_fields = ['reference']
 
     def create(self, validated_data):
@@ -32,6 +32,5 @@ class DonationSerializer(serializers.ModelSerializer):
         return super().create(validated_data)
 
     def generate_reference(self):
-        # Implement reference generation logic here
         import uuid
         return str(uuid.uuid4())

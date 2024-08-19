@@ -25,23 +25,24 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-zawqneb^*d_^kligxdfa%i&b(dx5vxepf)ve3=5u$hxxrzt6)t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["onrender.com"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'api.apps.ApiConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'api.apps.ApiConfig',
     'rest_framework',
-
+    'markdownx',
+    'markdownfield',
     'corsheaders',
     'phonenumber_field',
     'paystack',
@@ -139,6 +140,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -146,6 +149,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 PHONENUMBER_DEFAULT_REGION = 'GH' # Your Prefered Country
+
 
 
 ##env file
@@ -157,8 +161,8 @@ GMAIL_PASSWORD = os.getenv('GMAIL_USER_PASSWORD')
 
 # EMAIL CONFIGURATION (for contact form)
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# # EMAIL_HOST = 'smtp.gmail.com'
-# # EMAIL_HOST_USER = GMAIL_EMAIL
-# # EMAIL_HOST_PASSWORD = GMAIL_PASSWORD
-# # EMAIL_PORT = 587
-# # EMAIL_USE_TLS = True
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = GMAIL_EMAIL
+# EMAIL_HOST_PASSWORD = GMAIL_PASSWORD
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True

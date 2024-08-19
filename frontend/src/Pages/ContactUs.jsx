@@ -10,9 +10,11 @@ const ContactUs = () => {
     email: "",
     phone: "",
     message: "",
-    status: "",
   });
+  
 
+  const [message, setMessage] = useState("")
+  
   const ContactData ={
     first_name: formData.firstname,
     last_name: formData.lastname,
@@ -27,6 +29,7 @@ const ContactUs = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+<<<<<<< HEAD
     try {
 
       const response = await createContactUsMesasge(formData);
@@ -47,6 +50,28 @@ const ContactUs = () => {
       setFormData({ status: "error" });
     }
   };
+=======
+    
+    createContactUsMesasge(ContactData)
+    .then((response) => {
+      console.log("Message sent",response)
+      setMessage("Thank you for reaching out, we'll respond to you shortly");
+
+      //clear the form
+      setFormData({
+        firstname: "",
+        lastname: "",
+        email: "",
+        phone: "",
+        message: "",
+    });
+    }).catch((error) => {
+      console.log(error)
+      setMessage("Sorry, your message wasn't sent. Please try again later!")
+    });
+  }
+
+>>>>>>> 906fc578be8df656884793489d1da659415d125e
 
   return (
     <div className="relative">
@@ -65,11 +90,9 @@ const ContactUs = () => {
       </div>
 
       <div className="mx-6 md:mx-20">
-        {formData.status === "success" && <p>Thank you for contacting us!</p>}
-        {formData.status === "error" && (
-          <p>Something went wrong! Please try again later!</p>
-        )}
+        
         <p className="text-lg font-bold mt-5">Get In Touch</p>
+        {message && <p className="form-message">{message}</p>}
         <h2 className="text-3xl font-bold">Send Me A Message</h2>
       </div>
 
