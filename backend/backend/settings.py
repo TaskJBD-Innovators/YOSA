@@ -11,11 +11,15 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-import os
-from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+#env file
+import os
+from dotenv import load_dotenv
+path_to_env_file = os.path.join(BASE_DIR, '.env')
+load_dotenv(path_to_env_file) 
 
 
 # Quick-start development settings - unsuitable for production
@@ -23,6 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-zawqneb^*d_^kligxdfa%i&b(dx5vxepf)ve3=5u$hxxrzt6)t'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -152,9 +157,7 @@ PHONENUMBER_DEFAULT_REGION = 'GH' # Your Prefered Country
 
 
 
-##env file
-path_to_env_file = '../backend/env'
-load_dotenv(path_to_env_file) 
+
 
 GMAIL_EMAIL = os.getenv('GMAIL_USER_EMAIL')
 GMAIL_PASSWORD = os.getenv('GMAIL_USER_PASSWORD')
