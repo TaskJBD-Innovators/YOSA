@@ -7,6 +7,7 @@ import vision from '../Assets/visionicon.png';
 import Testimonial from "../Components/Testimonial";
 import Team from "../Components/Team";
 import { fetchgallery } from "../api/ApiService";
+import teamImage from "../Assets/teamImage.png"; 
 
 const features = [
   {
