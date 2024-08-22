@@ -8,7 +8,8 @@ import Navbar from '../Components/Navbar';
 import Donate from '../Components/Donate';
 import Registration from '../Components/Registration';
 import CharitySection from '../Components/CharitySection';
-import News from '../Components/News';
+
+
 
 const HomeScreen = () => {
   const [showDonationForm, setShowDonationForm] = useState(false);
@@ -32,7 +33,7 @@ const HomeScreen = () => {
       {!showForms && (
         <div className="hero">
           <div className="hero-content">
-            <h1>Helping Each Other Can Make World Better</h1>
+            <h1>Helping Each Other Can Make The World Better</h1>
             <p>
               We Seek Out World Changers And <br />Difference Makers Around The Globe<br />
               And Equip Them To Fulfill Their Unique Purpose.
@@ -77,7 +78,8 @@ const HomeScreen = () => {
           <CharitySection />
           <FunFacts />
           <CauseSection />
-          <News />
+         
+          
         </>
       )}
     </div>

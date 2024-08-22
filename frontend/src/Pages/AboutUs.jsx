@@ -1,19 +1,13 @@
- import React from "react";
+ import React, { useEffect, useState } from "react";
 import "../Styles/AboutUs.css";
-import Gallery1 from "../Assets/Gall1.png";
-import Gallery2 from "../Assets/gall2.png";
-import Gallery3 from "../Assets/gall3.png";
-import Gallery4 from "../Assets/gall4.png";
-import Gallery5 from "../Assets/gall5.png";
-import Gallery6 from "../Assets/gall6.png";
 import Navbar from "../Components/Navbar";
-import Aboutus1 from "../Assets/aboutus1.png";
-import Aboutus2 from "../Assets/aboutus2.png";
 import hope from "../Assets/hope.png";
 import mission from '../Assets/missionicon.png';
 import vision from '../Assets/visionicon.png';
 import Testimonial from "../Components/Testimonial";
 import Team from "../Components/Team";
+import { fetchgallery } from "../api/ApiService";
+import teamImage from "../Assets/teamImage.png"; 
 
 const features = [
   {
@@ -51,7 +45,25 @@ const features = [
   },
 ];
 
+
+
 const AboutUs = () => {
+
+  const [image, setImage] = useState([])
+
+  useEffect(() => {
+    fetchgallery()
+    .then((response) => {
+      console.log("Fetched data", response.data);
+      setImage(response.data);
+    }).catch((error) => {
+      console.error("There was an error fetching images!", error);
+    });
+  }, []);
+
+
+
+
   return (
     <div className="about-page">
       <header className="header">
@@ -60,26 +72,25 @@ const AboutUs = () => {
           <h1>About Us</h1>
         </div>
       </header>
-      <main className="about-us">
-        <div className="images">
-          <img src={Aboutus1} alt="Aboutus1" className="image-large" />
-          <img src={Aboutus2} alt="Aboutus2" className="image-small" />
-        </div>
-        <div className="text-content">
-          <h2>About Us</h2>
-          <h1>Your Support Is Really Powerful.</h1>
-          <p>
-            The secret to happiness lies in helping others. Never underestimate
-            the difference YOU can make in the lives of the poor, the abused and
-            the helpless. The secret to happiness lies in helping others. Never
-            underestimate the difference YOU can make in the lives of the poor,
-            the abused and the helpless. The secret to happiness lies in helping
-            others. Never underestimate the difference YOU can make in the lives
-            of the poor, the abused and the helpless. The secret to happiness
-            lies in helping others. Never underestimate the difference YOU can
-            make in the lives of the poor, the abused and the helpless.{" "}
-          </p>
-        </div>
+  
+    <div className="container">
+      <div className="text-content">
+        <h1>Outnovate! No Boundaries; Infinite Possibilities.</h1>
+        <p>
+          We are a game-changing product development house, software engineering enclave, research centre, and innovation services hub. We exist to be the enclave that communities and ecosystems will rely on to transform their everyday activities, make their lives smarter, and fulfill their dreams.
+        </p>
+        <p>
+          Businesses are the architects of change and possess an extraordinary ability to shape communities on a global scale. With unwavering determination, businesses forge new paths that create opportunities for better livelihoods, cultivate vibrant cultures, and ignite progress that resonates far beyond their walls.
+        </p>
+        <p>
+          Similarly, it’s in our DNA to create experiences that evolve smarter fulfillments and deliver wins for people, systems, and communities.
+        </p>
+      </div>
+      <div className="image-content">
+<img src={teamImage} alt="Team Img" />
+      </div>
+    </div>
+       
         <Team/>
         <div className="charitySection">
       <div className="charityContent">
@@ -176,17 +187,13 @@ const AboutUs = () => {
 
         <section className="gallery-section">
           <h2>Our Gallery</h2>
-          <div className="gallery-images">
-            <img src={Gallery1} alt="Gallery1" className="Gallery1" />
-            <img src={Gallery2} alt="Gallery2" className="Gallery2" />
-            <img src={Gallery3} alt="Gallery3" className="Gallery3" />
-            <img src={Gallery4} alt="Gallery4" className="Gallery4" />
-            <img src={Gallery5} alt="Gallery5" className="Gallery5" />
-            <img src={Gallery6} alt="Gallery6" className="Gallery6" />
+          <div  className="gallery-images">
+          {image.map((img, index) => (
+            <img src={img.image} key={index} alt={`Gallery ${index}`} className="Gallery1" />
+          ))}
           </div>
         </section>
    <Testimonial/>
-      </main>
     </div>
   );
 };
