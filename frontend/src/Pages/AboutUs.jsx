@@ -1,18 +1,18 @@
  import React from "react";
-import "../Styles/AboutUs.css";
+import teamImage from '../Assets/aboutus2.png';
 import Gallery1 from "../Assets/Gall1.png";
 import Gallery2 from "../Assets/gall2.png";
 import Gallery3 from "../Assets/gall3.png";
 import Gallery4 from "../Assets/gall4.png";
 import Gallery5 from "../Assets/gall5.png";
 import Gallery6 from "../Assets/gall6.png";
-import Navbar from "../Components/Navbar";
 import hope from "../Assets/hope.png";
 import mission from '../Assets/missionicon.png';
 import vision from '../Assets/visionicon.png';
-import Testimonial from "../Components/Testimonial";
+import Navbar from "../Components/Navbar";
 import Team from "../Components/Team";
-import teamImage from '../Assets/aboutus2.png';
+import Testimonial from "../Components/Testimonial";
+import "../Styles/AboutUs.css";
 
 
 const features = [
@@ -65,13 +65,8 @@ const AboutUs = () => {
       <div className="text-content">
         <h1>Outnovate! No Boundaries; Infinite Possibilities.</h1>
         <p>
-          We are a game-changing product development house, software engineering enclave, research centre, and innovation services hub. We exist to be the enclave that communities and ecosystems will rely on to transform their everyday activities, make their lives smarter, and fulfill their dreams.
-        </p>
-        <p>
-          Businesses are the architects of change and possess an extraordinary ability to shape communities on a global scale. With unwavering determination, businesses forge new paths that create opportunities for better livelihoods, cultivate vibrant cultures, and ignite progress that resonates far beyond their walls.
-        </p>
-        <p>
-          Similarly, it’s in our DNA to create experiences that evolve smarter fulfillments and deliver wins for people, systems, and communities.
+        Youth Space Afrika is a non for profit, youth led, adolescent focus and women focused organization that provides safe spaces for young people and girls to develop their potentials and as well advocate for against issues that affect adolescents, marginalized and vulnerable such as Persons with Disabilities, Persons living with HIV and Street children. 
+The organization further serves as a platform where young people <br></br>are able to access all information relating to their Sexual and Reproductive Health and Rights in order for them to make informed decisions. 
         </p>
       </div>
       <div className="image-content">

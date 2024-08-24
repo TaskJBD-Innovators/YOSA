@@ -294,6 +294,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+ 
+
 }
 
 .feature-card {
@@ -303,7 +305,7 @@
   text-align: left;
   width: 350px;
   height: 400px;
-  margin-left: -15 px;
+  margin-left: 20px;
 }
 
 .feature-card-dark {

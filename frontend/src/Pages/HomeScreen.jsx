@@ -11,6 +11,7 @@ import CharitySection from '../Components/CharitySection';
 
 
 
+
 const HomeScreen = () => {
   const [showDonationForm, setShowDonationForm] = useState(false);
   const [showVolunteerForm, setShowVolunteerForm] = useState(false);
@@ -72,7 +73,8 @@ const HomeScreen = () => {
                 Unlock Their Full Potential Through Youth Leadership, Mentorship,
                 And Empowerment, Contributing To A Brighter Future For All.
               </p>
-              <button className="read-more">Read More</button>
+
+  <button className="read-more">Read More</button>
             </div>
           </div>
           <CharitySection />
