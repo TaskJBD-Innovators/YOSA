@@ -21,7 +21,6 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-
     const ContactData = {
       first_name: formData.firstname,
       last_name: formData.lastname,
@@ -49,27 +48,6 @@ const ContactUs = () => {
       setMessage("Sorry, your message wasn't sent. Please try again later!");
     }
   };
-
-    
-    createContactUsMesasge(ContactData)
-    .then((response) => {
-      console.log("Message sent",response)
-      setMessage("Thank you for reaching out, we'll respond to you shortly");
-
-      //clear the form
-      setFormData({
-        firstname: "",
-        lastname: "",
-        email: "",
-        phone: "",
-        message: "",
-    });
-    }).catch((error) => {
-      console.log(error)
-      setMessage("Sorry, your message wasn't sent. Please try again later!")
-    });
-  }
-
 
   return (
     <div className="relative">
@@ -182,7 +160,8 @@ const ContactUs = () => {
           <h1 className="text-3xl font-bold mb-4">Address</h1>
 
           <p className="mb-4">
-          We value your interest in our mission and would love to hear from you! <br></br> Whether you have questions, want to get involved, or simply wish to learn more about our work, please feel free to reach out.
+            We value your interest in our mission and would love to hear from you! <br />
+            Whether you have questions, want to get involved, or simply wish to learn more about our work, please feel free to reach out.
           </p>
 
           <p>
@@ -202,38 +181,32 @@ const ContactUs = () => {
 
       <div
         name="sponsors-logos"
-        className="flex flex-row justify-space-between h-200 mt-10 mb-20 md:mx-20"
+        className="flex flex-row justify-between items-center h-32 mt-10 mb-20 md:mx-20"
       >
-        <div className="w-1/4 h-200 bg-yellow-300">
+        <div className="w-1/4 h-full flex justify-center bg-white">
           <img
             src={require("../Assets/client1.png")}
             alt="sponsor1"
-            className="h-200 w-full grayscale"
+            className="h-full object-contain"
           />
         </div>
-        <div className="w-1/4 h-200 bg-yellow-300">
+        <div className="w-1/4 h-full flex justify-center bg-white">
           <img
             src={require("../Assets/client2.png")}
-            alt="sponsor1"
-            className="h-200 w-full grayscale"
+            alt="sponsor2"
+            className="h-full object-contain"
           />
         </div>
-        <div className="w-1/4 h-200 bg-yellow-300">
+        <div className="w-1/4 h-full flex justify-center bg-white">
           <img
             src={require("../Assets/client3.png")}
-            alt="sponsor1"
-            className="h-200 w-full grayscale"
+            alt="sponsor3"
+            className="h-full object-contain"
           />
         </div>
-        <div className="w-1/4 h-200 bg-yellow-300">
-          <img
-            src={require("../Assets/client4.png")}
-            alt="sponsor1"
-            className="h-200 w-full grayscale"
-            />
-            </div>
-          </div>
-        </div>
-      );
-    };
-    export default ContactUs;
+      </div>
+    </div>
+  );
+};
+
+export default ContactUs;
