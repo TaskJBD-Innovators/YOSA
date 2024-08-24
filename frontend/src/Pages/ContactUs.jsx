@@ -21,6 +21,7 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+
     const ContactData = {
       first_name: formData.firstname,
       last_name: formData.lastname,
@@ -48,6 +49,27 @@ const ContactUs = () => {
       setMessage("Sorry, your message wasn't sent. Please try again later!");
     }
   };
+
+    
+    createContactUsMesasge(ContactData)
+    .then((response) => {
+      console.log("Message sent",response)
+      setMessage("Thank you for reaching out, we'll respond to you shortly");
+
+      //clear the form
+      setFormData({
+        firstname: "",
+        lastname: "",
+        email: "",
+        phone: "",
+        message: "",
+    });
+    }).catch((error) => {
+      console.log(error)
+      setMessage("Sorry, your message wasn't sent. Please try again later!")
+    });
+  }
+
 
   return (
     <div className="relative">
@@ -208,11 +230,10 @@ const ContactUs = () => {
             src={require("../Assets/client4.png")}
             alt="sponsor1"
             className="h-200 w-full grayscale"
-          />
+            />
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  );
-};
-
-export default ContactUs;
+      );
+    };
+    export default ContactUs;

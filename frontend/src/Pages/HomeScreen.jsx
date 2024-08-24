@@ -34,7 +34,7 @@ const HomeScreen = () => {
       {!showForms && (
         <div className="hero">
           <div className="hero-content">
-            <h1>Helping Each Other Can Make World Better</h1>
+            <h1>Helping Each Other Can Make The World Better</h1>
             <p>
               We Seek Out World Changers And <br />Difference Makers Around The Globe<br />
               And Equip Them To Fulfill Their Unique Purpose.

@@ -19,7 +19,10 @@ class ContactUsSerializer(serializers.ModelSerializer):
         model = ContactUs
         fields = '__all__'
 
-
+class GallerySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Gallery
+        fields = '__all__'
 
 class DonationSerializer(serializers.ModelSerializer):
     class Meta:

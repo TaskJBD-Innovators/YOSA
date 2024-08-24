@@ -30,7 +30,7 @@ class ContactUs(models.Model):
     message = models.TextField(max_length=500, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
     
-    def __str__(self) -> str:
+    def __str__(self):
         return self.email
     
        
@@ -66,6 +66,12 @@ class News(models.Model):
     def __str__(self):
         return self.title
     
+class Gallery(models.Model):
+    description = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='gallery/')
+    
+    def __str__(self):
+        return self.description
     
 @admin.action(description="Mark selected stories as published")
 def make_published(modeladmin, request, queryset):
@@ -83,6 +89,7 @@ class NewsAdmin(admin.ModelAdmin):
         
 class VolunteerAdmin(admin.ModelAdmin):
     list_display = ("last_name", "first_name", "gender")
+    search_fields = ("email", "last_name", "first_name")
 
 
     
