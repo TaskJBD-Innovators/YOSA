@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import '../Styles/HomeScreen.css';
-import communityGathering from '../Assets/aboutt.jpeg';
 import donationEvent from '../Assets/about1.jpeg';
-import FunFacts from '../Components/FunFacts';
+import communityGathering from '../Assets/aboutt.jpeg';
 import CauseSection from '../Components/CauseSection';
-import Navbar from '../Components/Navbar';
-import Donate from '../Components/Donate';
-import Registration from '../Components/Registration';
 import CharitySection from '../Components/CharitySection';
+import FunFacts from '../Components/FunFacts';
+import Navbar from '../Components/Navbar';
+import Registration from '../Components/Registration';
+import '../Styles/HomeScreen.css';
+import Donate from './Donate';
+import { Link } from 'react-router-dom';
 
 
 
@@ -73,8 +74,9 @@ const HomeScreen = () => {
                 Unlock Their Full Potential Through Youth Leadership, Mentorship,
                 And Empowerment, Contributing To A Brighter Future For All.
               </p>
-
-  <button className="read-more">Read More</button>
+              <Link to="/about">
+    <button className="read-more">Read More</button>
+  </Link>
             </div>
           </div>
           <CharitySection />

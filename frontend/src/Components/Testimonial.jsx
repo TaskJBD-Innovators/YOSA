@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import teamImage1 from "../Assets/Britney.jpeg";
 import teamImage2 from "../Assets/Divine .jpeg";
-import teamImage3 from "../Assets/Divine .jpeg";
+import teamImage3 from "../Assets/Robert.jpeg";
 import "tailwindcss/tailwind.css";
 
 const testimonials = [
@@ -9,19 +9,19 @@ const testimonials = [
     id: 1,
     image: teamImage1,
     text: "I have been deeply moved by the impact this NGO has made in our community. Their dedication to improving education for underprivileged children is truly inspiring. Through their programs, I’ve witnessed firsthand how they provide not just academic support, but also hope and confidence to these young minds.",
-    client: "Client 1",
+    client: "Britney",
   },
   {
     id: 2,
     image: teamImage2,
     text: "As a volunteer, I’ve had the privilege of working closely with this NGO, and I can confidently say that their commitment to creating lasting change is unmatched. They approach every challenge with compassion and professionalism, ensuring that every dollar donated is used effectively.",
-    client: "Client 2",
+    client: "Divine",
   },
   {
     id: 3,
     image: teamImage3,
     text: "This NGO has been a beacon of hope for so many people. Their focus on sustainable development and empowering communities has led to tangible improvements in health, education, and livelihoods. I’ve seen entire communities transformed by their efforts.",
-    client: "Client 3",
+    client: "Robert",
   },
 ];
 

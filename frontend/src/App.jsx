@@ -5,6 +5,7 @@ import AboutUs from './Pages/AboutUs';
 import Footer from './Components/Footer';
 import ContactUs from './Pages/ContactUs';
 import FAQ from './Pages/FAQ';
+import Donate from './Pages/Donate';
 import LoaderComponent from './Components/Loader';
 
 
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/donate" element={<Donate />} />
       </Routes>
       <Footer />
     </div>
