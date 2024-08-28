@@ -5,8 +5,12 @@ import '../Styles/Donate.css';
 import Navbar from '../Components/Navbar'; 
 import DonationImage from '../Assets/donate2.png'; // Replace with the correct path to your image
 import HeaderImage from '../Assets/donate.png'; // Replace with the correct path to your header background image
+import { createDonation } from '../api/ApiService';
 
 const Donate = () => {
+
+  const [message, setMessage] = useState('')
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -33,8 +37,17 @@ const Donate = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const donationData = {
+      first_name: formData.firstName,
+      last_name: formData.lastName,
+      email_address: formData.email,
+      donation_type: formData.donationType,
+      
+    };
+    
     if (formData.donationType === 'Money') {
       const amountInCents = formData.donationAmount * 100;
       setPaystackConfig({
@@ -45,8 +58,27 @@ const Donate = () => {
         currency: formData.currency,
       });
     } else {
-      console.log('Form submitted for non-monetary donation:', formData);
       // Handle non-monetary donations here
+      try{
+        const response = await createDonation(donationData);
+        if (response.data.success){
+          setMessage("Thank you for reaching out to YOSA. We'll contact you soon for pickup!");
+          setFormData({
+            firstName: '',
+            lastName: '',
+            phoneNumber: '',
+            email: '',
+            donationAmount: '',
+            donationType: '',
+          });
+          console.log('Form submitted for non-monetary donation:', formData);
+        } else {
+          setMessage(response.data.error)
+        }
+      } catch(error) {
+        setMessage("Sorry, there was a problem. Please try again later!")
+        console.log(error);
+      }
     }
   };
 
@@ -82,6 +114,7 @@ const Donate = () => {
         </div>
         <div className="form-container">
           <form onSubmit={handleSubmit} className="form-content">
+          {message && <p className="form-message">{message}</p>}
             <div className="form-header">
               <h2>Donation Form</h2>
             </div>

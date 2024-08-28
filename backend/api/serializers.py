@@ -27,7 +27,7 @@ class GallerySerializer(serializers.ModelSerializer):
 class DonationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Donation
-        fields = ['id','amount', 'email_address', 'first_name', 'last_name', 'reference']
+        fields = '__all__'
         read_only_fields = ['reference']
 
     def create(self, validated_data):
