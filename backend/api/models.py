@@ -3,7 +3,7 @@ from django.contrib import admin, messages
 from django.utils.translation import ngettext
 from phonenumber_field.modelfields import PhoneNumberField
 from django.core.mail import send_mail, EmailMessage
-from markdownx.models import MarkdownxField
+from mdeditor.fields import MDTextField
 
 
 # Create your models here.
@@ -59,7 +59,7 @@ class News(models.Model):
     "w": "Withdrawn"
     }
     title = models.CharField(max_length=50, null=False)
-    body = MarkdownxField()
+    body = MDTextField(null=True, blank=True)
     author =models.CharField(max_length=100)
     date = models.DateField(auto_now_add=True)
     created_at = models.DateTimeField(auto_now_add=True)
