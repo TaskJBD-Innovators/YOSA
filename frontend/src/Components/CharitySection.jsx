@@ -50,11 +50,8 @@ const CharitySection = () => {
       <img src={charityImage} alt="Group of people" />
         <div className={styles.imageCaption}>
           <ul>
-            <li>Together, We're Going To Make The Future</li>
-            <li>Children Where We Are Able To Fulfill All</li>
-            <li>Their Requirements To<br></br>Keep Them Safe From Withered World</li>
-            <li>We Have Already Stepped Out <br></br>And Start Changing The World</li>
-            <li>Keeping Safe Them From War, Inhumanity</li>
+          Together, We’re Building a Brighter Future<br></br>
+For every child, we envision a world where they can thrive, <br></br>free from fear and full of hope.<br></br> We are committed to meeting their essential needs<br></br>Join us in creating a world where every child is cherished, nurtured, and empowered to dream.
           </ul>
         </div>
       </div>

@@ -19,7 +19,7 @@
   padding: 20px;
   border-radius: 10px;
   margin: 50px 0; /* Adjusted margin to fit header section */
-  animation: fadeIn 3s ease-in-out forwards;
+
 }
 
 .header-text h1 {
@@ -27,14 +27,6 @@
   color: #fff; /* Ensures the text is readable on the dark background */
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 
 .container {
   display: grid;
@@ -421,7 +413,7 @@
 @media (max-width: 768px) {
   .features-cards {
     grid-template-columns: repeat(2, 1fr);
-    margin-left:5px ;
+    margin-left:-15px ;
   }
 
 
@@ -470,7 +462,7 @@
 
   .overlay {
     left: -60px;
-    width: 100;
+    width: 80;
     text-align: center;
     height: auto;
     margin-top: 2x;

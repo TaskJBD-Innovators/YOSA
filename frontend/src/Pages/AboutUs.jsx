@@ -8,8 +8,6 @@ import React, { useEffect, useState } from "react";
 import "../Styles/AboutUs.css";
 import Navbar from "../Components/Navbar";
 import hope from "../Assets/hope.png";
-import mission from "../Assets/missionicon.png";
-import vision from "../Assets/visionicon.png";
 import Team from "../Components/Team";
 import Testimonial from "../Components/Testimonial";
 import "../Styles/AboutUs.css";
@@ -97,53 +95,6 @@ const AboutUs = () => {
         </div>
       </div>
       <Team />
-      <div className="charitySection">
-        <div className="charityContent">
-          <h2>Welcome To Charity</h2>
-          <h1>Let Us Come Together To Make A Difference</h1>
-          <p>
-            Towards A World Where Young People Regardless Of Gender,<br></br>{" "}
-            Unlock Their Full Potential Through Youth Leadership,<br></br>{" "}
-            Mentorship, And Empowerment, Contributing To A Brighter Future For
-            All.
-          </p>
-          <div className="missionVision">
-            <div className="mission">
-              <img src={mission} alt="mission" />
-              <h3>Our Mission</h3>
-              <p>
-                To Empower Young People Of <br></br>All Genders Through
-                Inclusive Leadership.
-              </p>
-            </div>
-            <div className="vision">
-              <img src={vision} alt="vision" />
-              <h3>Our Vision</h3>
-              <p>
-                Working Towards A World Where Young People, <br></br>
-                Irrespective Of Gender, Unlock Their Full Potential <br></br>
-                Through Youth Leadership, Mentorship, And Empowerment.
-              </p>
-            </div>
-          </div>
-          <div className="progressBars">
-            <div className="progressBar">
-              <span>Donations</span>
-              <div className="bar">
-                <div className="fill" style={{ width: "75%" }}></div>
-              </div>
-              <span>75%</span>
-            </div>
-            <div className="progressBar">
-              <span>Medical Help</span>
-              <div className="bar">
-                <div className="fill" style={{ width: "90%" }}></div>
-              </div>
-              <span>90%</span>
-            </div>
-          </div>
-        </div>
-      </div>
       <div className="about-us-section">
         <div className="image-container">
           <img
@@ -153,17 +104,17 @@ const AboutUs = () => {
           />
           <div className="overlay">
             <ul className="overlay-text">
-              <li>Together, We're Going to Make The Future</li>
-              <li>Children Where We Are Able To Fulfill All</li>
-              <li>
-                Their Requirements To Keep <br />
-                Them Safe From Withered World
-              </li>
-              <li>
-                We Have Already Stepped Out And <br />
+              Together, We're Going to Make The Future
+              Children Where We Are Able To Fulfill All
+              
+                Their Requirements To Keep
+                Them Safe From Withered World<b></b>
+             
+              
+                We Have Already Stepped Out And 
                 Start Changing The World
-              </li>
-              <li>Keeping Safe Them From War, Inhumanity</li>
+              
+              Keeping Safe Them From War, Inhumanity
             </ul>
           </div>
         </div>
