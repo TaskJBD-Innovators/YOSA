@@ -18,33 +18,33 @@ const features = [
   {
     title: "Food & Homeless Charity",
     description:
-      "Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Sed Diam Nonumy Tempor Invidunt Ut Labore Et Magna Aliquyam Erat, Sed Diam Voluptua......",
+      "Providing hope and support to those in need, one meal and one home at a time. Your generosity will help us feed the hungry and shelter the homeless, bringing comfort and dignity to those who need it most.",
     points: [
-      "Join Your Hand With Us For A Better Life",
-      "Let's Do The Right Thing Now",
+      "Help us serve a meal, change a life",
+      "Every donation brings us closer to a hunger-free community",
+      "Together, we can provide a home for all"
     ],
     icon: require("../Assets/houseicon.png"),
   },
-  {
-    title: "Make A Donation",
-    description:
-      "Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Sed Diam Nonumy Tempor Invidunt Ut Labore Et Magna Aliquyam Erat, Sed Diam Voluptua......",
-    points: [
-      "Join Your Hand With Us For A Better Life",
-      "Let's Do The Right Thing Now",
-      "Lorem Ipsum Dolor Sit Amet",
-    ],
-    icon: require("../Assets/dolldo.png"),
-  },
+    {
+      title: "Make A Donation",
+      description: "Together, we can make a difference in the lives of those in need. Your donation will help support our mission to create a better world for all. Every contribution counts, no matter how big or small.",
+      points: [
+        "Be the change you wish to see in the world",
+        "Every donation brings us closer to a brighter future",
+        "Your generosity can change lives"
+      ],
+      icon: require("../Assets/dolldo.png") 
+    },
   {
     title: "Non Profit NGO",
     description:
-      "Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Sed Diam Nonumy Tempor Invidunt Ut Labore Et Magna Aliquyam Erat, Sed Diam Voluptua......",
+      "Empowering communities, enriching lives. Our non-profit organization is dedicated to creating positive change. Your support enables us to make a meaningful difference in the lives of those who need it most.",
     points: [
-      "Join Your Hand With Us For A Better Life",
-      "Let's Do The Right Thing Now",
-      "Lorem Ipsum Dolor Sit Amet",
-      "Children Where We Are Able To Fulfill All",
+      "Together, we can create a brighter future",
+      "Every contribution counts in our mission to serve",
+ 
+   
     ],
     icon: require("../Assets/shakeicon.png"),
   },
@@ -104,15 +104,15 @@ const AboutUs = () => {
           />
           <div className="overlay">
             <ul className="overlay-text">
-              Together, We're Going to Make The Future
+              Together, We're Going to Make The Future<br></br>
               Children Where We Are Able To Fulfill All
               
-                Their Requirements To Keep
+                Their Requirements<br></br> To Keep
                 Them Safe From Withered World<b></b>
              
               
-                We Have Already Stepped Out And 
-                Start Changing The World
+                We <br></br>Have Already Stepped Out And 
+                Start Changing <br></br>The World
               
               Keeping Safe Them From War, Inhumanity
             </ul>

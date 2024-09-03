@@ -18,14 +18,14 @@ const CharitySection = () => {
           <img src={mission} alt="mission" />
             <h3>Our Mission</h3>
             <p>
-              To Empower Young People Of All Genders Through Inclusive Leadership, Mentorship, And Empowerment Programs, Fostering A Culture Of Equality And Collaboration. By Providing Opportunities For Growth And Advocacy,
+              To Empower Young People Of All Genders Through Inclusive Leadership, Mentorship, And Empowerment Programs, Fostering A Culture Of Equality And Collaboration.
             </p>
           </div>
           <div className={styles.vision}>
           <img src={vision} alt="vision" />
             <h3>Our Vision</h3>
             <p>
-              Working Towards A World Where Young People, Irrespective Of Gender, Unlock Their Full Potential Through Youth Leadership, Mentorship, And Empowerment, Contributing To A Brighter Future For All.
+              Working Towards A World Where Young People, Irrespective Of Gender, Unlock Their Full Potential Through Youth Leadership, Mentorship, And Empowerment.
             </p>
           </div>
         </div>
@@ -51,8 +51,8 @@ const CharitySection = () => {
         <div className={styles.imageCaption}>
           <ul>
           Together, We’re Building a Brighter Future<br></br>
-For every child, we envision a world where they can thrive, <br></br>free from fear and full of hope.<br></br> We are committed to meeting their essential needs<br></br>Join us in creating a world where every child is cherished, nurtured, and empowered to dream.
-          </ul>
+For every child, we envision a world where they can thrive, <br></br>free from fear and full of hope.<br></br> We are committed to meeting their essential needs.
+        </ul>
         </div>
       </div>
     </div>

@@ -165,7 +165,16 @@
   .form-container {
       max-width: 100%;
   }
-
+  .header-content h1 {
+    font-size:4vw;
+  
+  }
+  
+  .header-content p {
+    margin: 20px 0;
+    font-size: 3vw;
+   
+  }
   .form-grid {
       grid-template-columns: 1fr;
   }
