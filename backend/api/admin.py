@@ -6,5 +6,5 @@ from markdownx.admin import MarkdownxModelAdmin
 admin.site.register(Volunteer, VolunteerAdmin)
 admin.site.register(News, NewsAdmin)
 admin.site.register(ContactUs)
-admin.site.register(Donation)
+admin.site.register(Donation, DonationAdmin)
 admin.site.register(Gallery)

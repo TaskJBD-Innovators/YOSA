@@ -71,8 +71,8 @@ const ContactUs = () => {
       </div>
 
       <div className="mx-6 md:mx-20">
-        <p className="text-lg font-bold mt-5">Get In Touch</p>
         {message && <p className="form-message">{message}</p>}
+        <p className="text-lg font-bold mt-5">Get In Touch</p>
         <h2 className="text-3xl font-bold">Send Me A Message</h2>
       </div>
 
@@ -165,8 +165,10 @@ const ContactUs = () => {
           <h1 className="text-3xl font-bold mb-4">Address</h1>
 
           <p className="mb-4">
-            We value your interest in our mission and would love to hear from you! <br />
-            Whether you have questions, want to get involved, or simply wish to learn more about our work, please feel free to reach out.
+            We value your interest in our mission and would love to hear from
+            you! <br />
+            Whether you have questions, want to get involved, or simply wish to
+            learn more about our work, please feel free to reach out.
           </p>
 
           <p>
