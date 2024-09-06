@@ -58,7 +58,7 @@ class News(models.Model):
     "p": "Published",
     "w": "Withdrawn"
     }
-    title = models.CharField(max_length=50, null=False)
+    title = models.CharField(max_length=100, null=False)
     body = MDTextField(null=True, blank=True)
     author =models.CharField(max_length=100)
     date = models.DateField(auto_now_add=True)
